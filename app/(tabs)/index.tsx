@@ -13,7 +13,7 @@ function Header() {
   );
 }
 
-export default function HomeScreen() {
+export default function HomePage() {
   return (
     <View style={styles.container}>
       <Header />
