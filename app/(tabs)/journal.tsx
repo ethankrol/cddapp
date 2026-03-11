@@ -5,7 +5,7 @@ function Header() {
   return (
     <View style={styles.header}>
       <Text style={styles.headerSpacer}></Text>
-      <Text style={styles.headerTitle}>Blood Pressure</Text>
+      <Text style={styles.headerTitle}>Journal</Text>
       <Pressable onPress={() => alert('Notifications')}>
         <NotificationIcon style={styles.notificationIcon} />
       </Pressable>
@@ -13,7 +13,7 @@ function Header() {
   );
 }
 
-export default function HomePage() {
+export default function JournalPage() {
   return (
     <View style={styles.container}>
       <Header />
