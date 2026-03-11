@@ -1,4 +1,4 @@
-import NotificationIcon from '@/assets/images/notification.svg';
+import { Ionicons } from '@expo/vector-icons';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 function Header() {
@@ -7,7 +7,7 @@ function Header() {
       <Text style={styles.headerSpacer}></Text>
       <Text style={styles.headerTitle}>Journal</Text>
       <Pressable onPress={() => alert('Notifications')}>
-        <NotificationIcon style={styles.notificationIcon} />
+        <Ionicons name="notifications-outline" size={28} color="black" style={styles.notificationIcon} />
       </Pressable>
     </View>
   );
