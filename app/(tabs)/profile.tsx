@@ -2,12 +2,16 @@ import SkinTonePicker from '@/components/skintone-picker';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import React, { ComponentProps, useEffect, useState } from 'react';
 import {
+  Keyboard,
+  KeyboardAvoidingView,
   KeyboardTypeOptions,
+  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
   Text,
   TextInput,
+  TouchableWithoutFeedback,
   View,
 } from 'react-native';
 // If the @ alias fails, use relative path: import { ... } from '../../services/database';
@@ -105,114 +109,127 @@ export default function ProfilePage() {
   };
 
   return (
-    <ScrollView style={styles.container} keyboardShouldPersistTaps="handled">
-      <Header />
+    <KeyboardAvoidingView
+    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    style={{ flex: 1, backgroundColor: '#fff' }}
+    // Optional: add keyboardVerticalOffset if you have a header or nav bar
+    keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0} 
+  >
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <ScrollView 
+        style={styles.container} 
+        contentContainerStyle={{ paddingBottom: 100 }} // Extra space for the Nav Bar4
+        keyboardShouldPersistTaps="handled"
+      >
+        <Header />
 
-      <View style={styles.profileHeader}>
-        <View style={styles.avatarContainer}>
-          <View style={styles.avatarPlaceholder} />
-          <Pressable style={styles.editIconBadge} onPress={handleToggleEdit}>
-            <MaterialCommunityIcons 
-              name={isEditing ? "check" : "pencil-outline"} 
-              size={18} 
-              color="white" 
-            />
-          </Pressable>
-        </View>
-        <View style={styles.nameContainer}>
-          {isEditing ? (
-            <>
-              <TextInput
-                style={[styles.userNameInput, { marginBottom: 8 }]}
-                value={profile.firstName}
-                onChangeText={(t) => setProfile({ ...profile, firstName: t })}
+        <View style={styles.profileHeader}>
+          <View style={styles.avatarContainer}>
+            <View style={styles.avatarPlaceholder} />
+            <Pressable style={styles.editIconBadge} onPress={handleToggleEdit}>
+              <MaterialCommunityIcons 
+                name={isEditing ? "check" : "pencil-outline"} 
+                size={18} 
+                color="white" 
               />
-              <TextInput
-                style={styles.userNameInput}
-                value={profile.lastName}
-                onChangeText={(t) => setProfile({ ...profile, lastName: t })}
-              />
-            </>
-          ) : (
-            <Text style={styles.userNameText}>{`${profile.firstName}\n${profile.lastName}`}</Text>
-          )}
-        </View>
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Contact Information:</Text>
-        <InfoItem
-          icon="call-outline"
-          label="Phone"
-          value={profile.phone}
-          isEditing={isEditing}
-          onChange={(t) => setProfile({ ...profile, phone: t })}
-          keyboardType="phone-pad"
-        />
-        <InfoItem
-          icon="mail-outline"
-          label="Email"
-          value={profile.email}
-          isEditing={isEditing}
-          onChange={(t) => setProfile({ ...profile, email: t })}
-          keyboardType="email-address"
-        />
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>User Data:</Text>
-        <InfoItem
-          icon="calendar-outline"
-          label="DOB"
-          value={profile.dob}
-          isEditing={isEditing}
-          onChange={(t) => setProfile({ ...profile, dob: t })}
-        />
-        <InfoItem
-          icon="scale-bathroom"
-          label="Weight"
-          value={profile.weight}
-          provider="MaterialCommunityIcons"
-          isEditing={isEditing}
-          keyboardType="numeric"
-          onChange={(t) => setProfile({ ...profile, weight: parseInt(t) || 0 })}
-        />
-        <InfoItem
-          icon="human-male-height"
-          label="Height"
-          value={profile.height}
-          provider="MaterialCommunityIcons"
-          isEditing={isEditing}
-          onChange={(t) => setProfile({ ...profile, height: t })}
-        />
-        <InfoItem
-          icon="person-outline"
-          label="Age"
-          value={profile.age}
-          isEditing={isEditing}
-          keyboardType="numeric"
-          onChange={(t) => setProfile({ ...profile, age: parseInt(t) || 0 })}
-        />
-        
-        <View style={styles.infoRow}>
-          <View style={styles.iconContainer}>
-            <Ionicons name="body-outline" size={22} color="black" />
+            </Pressable>
           </View>
-          <View style={styles.inlineTextContainer}>
-            <Text style={styles.fieldLabelInline}>Skin Tone: </Text>
-            <View style={{ flex: 1, marginLeft: 10 }}>
-              <SkinTonePicker
-                selected={profile.skinTone}
-                isEditable={isEditing}
-                onSelect={(index) => setProfile({ ...profile, skinTone: index })}
-              />
+          <View style={styles.nameContainer}>
+            {isEditing ? (
+              <>
+                <TextInput
+                  style={[styles.userNameInput, { marginBottom: 8 }]}
+                  value={profile.firstName}
+                  onChangeText={(t) => setProfile({ ...profile, firstName: t })}
+                />
+                <TextInput
+                  style={styles.userNameInput}
+                  value={profile.lastName}
+                  onChangeText={(t) => setProfile({ ...profile, lastName: t })}
+                />
+              </>
+            ) : (
+              <Text style={styles.userNameText}>{`${profile.firstName}\n${profile.lastName}`}</Text>
+            )}
+          </View>
+        </View>
+
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Contact Information:</Text>
+          <InfoItem
+            icon="call-outline"
+            label="Phone"
+            value={profile.phone}
+            isEditing={isEditing}
+            onChange={(t) => setProfile({ ...profile, phone: t })}
+            keyboardType="phone-pad"
+          />
+          <InfoItem
+            icon="mail-outline"
+            label="Email"
+            value={profile.email}
+            isEditing={isEditing}
+            onChange={(t) => setProfile({ ...profile, email: t })}
+            keyboardType="email-address"
+          />
+        </View>
+
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>User Data:</Text>
+          <InfoItem
+            icon="calendar-outline"
+            label="DOB"
+            value={profile.dob}
+            isEditing={isEditing}
+            onChange={(t) => setProfile({ ...profile, dob: t })}
+          />
+          <InfoItem
+            icon="scale-bathroom"
+            label="Weight"
+            value={profile.weight}
+            provider="MaterialCommunityIcons"
+            isEditing={isEditing}
+            keyboardType="numeric"
+            onChange={(t) => setProfile({ ...profile, weight: parseInt(t) || 0 })}
+          />
+          <InfoItem
+            icon="human-male-height"
+            label="Height"
+            value={profile.height}
+            provider="MaterialCommunityIcons"
+            isEditing={isEditing}
+            onChange={(t) => setProfile({ ...profile, height: t })}
+          />
+          <InfoItem
+            icon="person-outline"
+            label="Age"
+            value={profile.age}
+            isEditing={isEditing}
+            keyboardType="numeric"
+            onChange={(t) => setProfile({ ...profile, age: parseInt(t) || 0 })}
+          />
+          
+          <View style={styles.infoRow}>
+            <View style={styles.iconContainer}>
+              <Ionicons name="body-outline" size={22} color="black" />
+            </View>
+            <View style={styles.inlineTextContainer}>
+              <Text style={styles.fieldLabelInline}>Skin Tone: </Text>
+              <View style={{ flex: 1, marginLeft: 10 }}>
+                <SkinTonePicker
+                  selected={profile.skinTone}
+                  isEditable={isEditing}
+                  onSelect={(index) => setProfile({ ...profile, skinTone: index })}
+                />
+              </View>
             </View>
           </View>
         </View>
-      </View>
-      
-      <View style={{ height: 60 }} />
+        
+        <View style={{ height: 60 }} />
     </ScrollView>
+    </TouchableWithoutFeedback>
+  </KeyboardAvoidingView>
   );
 }
 
