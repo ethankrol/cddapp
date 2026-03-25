@@ -114,14 +114,14 @@ export default function ProfilePage() {
     style={{ flex: 1, backgroundColor: '#fff' }}
     // Optional: add keyboardVerticalOffset if you have a header or nav bar
     keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 0} 
-  >
+    >
+    <Header />
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ScrollView 
         style={styles.container} 
         contentContainerStyle={{ paddingBottom: 100 }} // Extra space for the Nav Bar4
         keyboardShouldPersistTaps="handled"
       >
-        <Header />
 
         <View style={styles.profileHeader}>
           <View style={styles.avatarContainer}>
