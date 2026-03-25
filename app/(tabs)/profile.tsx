@@ -257,7 +257,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 25,
-    marginTop: 10,
+    marginTop: 30,
   },
   avatarContainer: { position: 'relative' },
   avatarPlaceholder: {
