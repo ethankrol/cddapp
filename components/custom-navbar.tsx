@@ -34,8 +34,8 @@ export default function CustomNavBar() {
             style={styles.tab}
           >
             <IconComponent
-              width={26}
-              height={26}
+              width={20}
+              height={20}
             />
             <Text style={[styles.label, isActive && { color: '#8d9ecc' }]}>
               {tab.label}
@@ -56,13 +56,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     backgroundColor: '#2A3451',
-    borderRadius: 40,
-    height: 80,
+    borderRadius: 0,
+    height: 90,
     paddingHorizontal: 20,
   },
   tab: {
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 10,
   },
   label: {
     color: '#fff',

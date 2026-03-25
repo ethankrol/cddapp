@@ -1,7 +1,8 @@
 import SkinTonePicker from '@/components/skintone-picker';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
-import React, { useState } from 'react';
+import React, { ComponentProps, useEffect, useState } from 'react';
 import {
+  KeyboardTypeOptions,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -9,8 +10,10 @@ import {
   TextInput,
   View,
 } from 'react-native';
+// If the @ alias fails, use relative path: import { ... } from '../../services/database';
+import { getProfile, initDatabase, saveProfile, UserProfile } from '@/services/database';
 
-const INITIAL_USER = {
+const INITIAL_USER: UserProfile = {
   firstName: 'First',
   lastName: 'Last',
   phone: '111-222-3333',
@@ -22,21 +25,25 @@ const INITIAL_USER = {
   skinTone: 0,
 };
 
+interface InfoItemProps {
+  icon: ComponentProps<typeof Ionicons>['name'] | ComponentProps<typeof MaterialCommunityIcons>['name'];
+  label: string;
+  value: string | number;
+  onChange: (text: string) => void;
+  isEditing: boolean;
+  provider?: "Ionicons" | "MaterialCommunityIcons";
+  keyboardType?: KeyboardTypeOptions;
+}
+
 const InfoItem = ({ 
-  icon, 
-  label, 
-  value, 
-  onChange, 
-  isEditing, 
-  provider = "Ionicons", 
-  keyboardType = "default" 
-}: any) => (
+  icon, label, value, onChange, isEditing, provider = "Ionicons", keyboardType = "default" 
+}: InfoItemProps) => (
   <View style={styles.infoRow}>
     <View style={styles.iconContainer}>
       {provider === "Ionicons" ? (
-        <Ionicons name={icon} size={22} color="black" />
+        <Ionicons name={icon as any} size={22} color="black" />
       ) : (
-        <MaterialCommunityIcons name={icon} size={22} color="black" />
+        <MaterialCommunityIcons name={icon as any} size={22} color="black" />
       )}
     </View>
     <View style={styles.inlineTextContainer}>
@@ -69,11 +76,30 @@ function Header() {
 
 export default function ProfilePage() {
   const [isEditing, setIsEditing] = useState(false);
-  const [profile, setProfile] = useState(INITIAL_USER);
+  const [profile, setProfile] = useState<UserProfile>(INITIAL_USER);
 
-  const handleToggleEdit = () => {
+  useEffect(() => {
+    const setup = async () => {
+      try {
+        await initDatabase();
+        const saved = await getProfile();
+        if (saved) {
+          setProfile(saved);
+        }
+      } catch (err) {
+        console.error("Database Load Error:", err);
+      }
+    };
+    setup();
+  }, []);
+
+  const handleToggleEdit = async () => {
     if (isEditing) {
-      console.log('Saved to DB:', profile);
+      try {
+        await saveProfile(profile);
+      } catch (err) {
+        console.error("Save Error:", err);
+      }
     }
     setIsEditing(!isEditing);
   };
@@ -82,7 +108,6 @@ export default function ProfilePage() {
     <ScrollView style={styles.container} keyboardShouldPersistTaps="handled">
       <Header />
 
-      {/* 1. Header Section */}
       <View style={styles.profileHeader}>
         <View style={styles.avatarContainer}>
           <View style={styles.avatarPlaceholder} />
@@ -114,7 +139,6 @@ export default function ProfilePage() {
         </View>
       </View>
 
-      {/* 2. Contact Information */}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Contact Information:</Text>
         <InfoItem
@@ -122,7 +146,7 @@ export default function ProfilePage() {
           label="Phone"
           value={profile.phone}
           isEditing={isEditing}
-          onChange={(t: string) => setProfile({ ...profile, phone: t })}
+          onChange={(t) => setProfile({ ...profile, phone: t })}
           keyboardType="phone-pad"
         />
         <InfoItem
@@ -130,12 +154,11 @@ export default function ProfilePage() {
           label="Email"
           value={profile.email}
           isEditing={isEditing}
-          onChange={(t: string) => setProfile({ ...profile, email: t })}
+          onChange={(t) => setProfile({ ...profile, email: t })}
           keyboardType="email-address"
         />
       </View>
 
-      {/* 3. User Data */}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>User Data:</Text>
         <InfoItem
@@ -143,7 +166,7 @@ export default function ProfilePage() {
           label="DOB"
           value={profile.dob}
           isEditing={isEditing}
-          onChange={(t: string) => setProfile({ ...profile, dob: t })}
+          onChange={(t) => setProfile({ ...profile, dob: t })}
         />
         <InfoItem
           icon="scale-bathroom"
@@ -152,7 +175,7 @@ export default function ProfilePage() {
           provider="MaterialCommunityIcons"
           isEditing={isEditing}
           keyboardType="numeric"
-          onChange={(t: string) => setProfile({ ...profile, weight: parseInt(t) || 0 })}
+          onChange={(t) => setProfile({ ...profile, weight: parseInt(t) || 0 })}
         />
         <InfoItem
           icon="human-male-height"
@@ -160,7 +183,7 @@ export default function ProfilePage() {
           value={profile.height}
           provider="MaterialCommunityIcons"
           isEditing={isEditing}
-          onChange={(t: string) => setProfile({ ...profile, height: t })}
+          onChange={(t) => setProfile({ ...profile, height: t })}
         />
         <InfoItem
           icon="person-outline"
@@ -168,10 +191,9 @@ export default function ProfilePage() {
           value={profile.age}
           isEditing={isEditing}
           keyboardType="numeric"
-          onChange={(t: string) => setProfile({ ...profile, age: parseInt(t) || 0 })}
+          onChange={(t) => setProfile({ ...profile, age: parseInt(t) || 0 })}
         />
         
-        {/* Integrated Skin Tone Row */}
         <View style={styles.infoRow}>
           <View style={styles.iconContainer}>
             <Ionicons name="body-outline" size={22} color="black" />
@@ -195,10 +217,7 @@ export default function ProfilePage() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
+  container: { flex: 1, backgroundColor: '#fff' },
   header: {
     height: 100,
     paddingHorizontal: 20,
@@ -208,30 +227,22 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   headerTitle: {
-    paddingTop: 60,
+    paddingTop: 70,
     fontSize: 20,
     fontWeight: '700',
     color: '#000',
     textAlign: 'center',
     flex: 1,
   },
-  notificationIcon: {
-    marginTop: 40,
-    width: 28,
-  },
-  headerSpacer: {
-    width: 28,
-    marginTop: 40,
-  },
+  notificationIcon: { marginTop: 40, width: 28 },
+  headerSpacer: { width: 28, marginTop: 40 },
   profileHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 25,
     marginTop: 10,
   },
-  avatarContainer: {
-    position: 'relative',
-  },
+  avatarContainer: { position: 'relative' },
   avatarPlaceholder: {
     width: 130,
     height: 130,
@@ -248,16 +259,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 8,
   },
-  nameContainer: {
-    flex: 1,
-    marginLeft: 20,
-  },
-  userNameText: {
-    fontSize: 32,
-    fontWeight: '500',
-    lineHeight: 38,
-    color: '#111',
-  },
+  nameContainer: { flex: 1, marginLeft: 20 },
+  userNameText: { fontSize: 32, fontWeight: '500', lineHeight: 38, color: '#111' },
   userNameInput: {
     fontSize: 24,
     fontWeight: '500',
@@ -265,41 +268,13 @@ const styles = StyleSheet.create({
     borderBottomColor: '#3e4550',
     color: '#111',
   },
-  section: {
-    paddingHorizontal: 25,
-    marginTop: 30,
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: '700',
-    marginBottom: 20,
-    color: '#000',
-  },
-  infoRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 18,
-  },
-  iconContainer: {
-    width: 30,
-    alignItems: 'center',
-  },
-  inlineTextContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginLeft: 15,
-  },
-  fieldLabelInline: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#000',
-  },
-  infoTextInline: {
-    fontSize: 18,
-    color: '#111',
-    fontWeight: '400',
-  },
+  section: { paddingHorizontal: 25, marginTop: 30 },
+  sectionTitle: { fontSize: 18, fontWeight: '700', marginBottom: 20, color: '#000' },
+  infoRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 18 },
+  iconContainer: { width: 30, alignItems: 'center' },
+  inlineTextContainer: { flex: 1, flexDirection: 'row', alignItems: 'center', marginLeft: 15 },
+  fieldLabelInline: { fontSize: 18, fontWeight: '600', color: '#000' },
+  infoTextInline: { fontSize: 18, color: '#111', fontWeight: '400' },
   inputFieldInline: {
     flex: 1,
     fontSize: 18,
