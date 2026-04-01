@@ -167,23 +167,23 @@ const styles = StyleSheet.create({
     paddingBottom: 20, // Space at the very bottom of the page
   },
   header: { 
-    height: 90, 
-    paddingHorizontal: 20, 
-    flexDirection: 'row', 
-    alignItems: 'center', 
-    borderBottomWidth: 1, 
-    borderBottomColor: '#eee',
-    backgroundColor: '#fff', // Keep header solid while scrolling
+    height: 100,
+    paddingHorizontal: 20,
+    backgroundColor: '#fff',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   headerTitle: { 
-    paddingTop: 35, 
-    fontSize: 22, 
-    fontWeight: '700', 
-    flex: 1, 
-    textAlign: 'center' 
+    paddingTop: 70,
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#000',
+    textAlign: 'center',
+    flex: 1,
   },
-  notificationIcon: { marginTop: 35 },
-  headerSpacer: { width: 28, marginTop: 35 },
+  notificationIcon: { marginTop: 40, width: 28 },
+  headerSpacer: { width: 28, marginTop: 40 },
   calendarWrapper: {
     paddingVertical: 10,
     borderBottomWidth: 1,
