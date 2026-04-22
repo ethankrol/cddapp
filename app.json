@@ -27,6 +27,8 @@
     },
     "plugins": [
       "expo-router",
+      "expo-dev-client",
+      "./app.plugin.js",
       [
         "expo-splash-screen",
         {
