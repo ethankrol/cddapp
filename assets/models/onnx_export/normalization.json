@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "sampling_rate_hz": 125,
+  "samples_per_beat": 250,
+  "channel_order": [
+    "PPG",
+    "dPPG",
+    "d2PPG"
+  ],
+  "timing_feature_order": [
+    "scaled_upstroke_time",
+    "scaled_beat_interval"
+  ],
+  "channel_mean": [
+    0.4523533880710602,
+    8.225564442909672e-07,
+    5.5200511269504204e-05
+  ],
+  "channel_std": [
+    0.7686189413070679,
+    0.02521825209259987,
+    0.0038505829870700836
+  ],
+  "timing_mean": [
+    1.3942710161209106,
+    0.6097057461738586
+  ],
+  "timing_std": [
+    1.494810700416565,
+    0.14007417857646942
+  ],
+  "output_order": [
+    "SBP",
+    "DBP"
+  ],
+  "output_units": "mmHg",
+  "training_beat_count": 220000,
+  "source_dtype": "float32",
+  "numpy_version": "1.23.5",
+  "model_sha256": "2cabfe0c64bf2463495d9581dea837638c41c149948abd9730b8b6be25fd0169",
+  "train_cache_sha256": "3442299cb3996386916707cd88f89e5bc5cbdf08077d3e8d94ed181b5fdb4940",
+  "cache_checkpoint_pairing_verified": false
+}

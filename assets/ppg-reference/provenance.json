@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "contract": "legacy_ppg_candidates_v1",
+  "pythonSourceSha256": "18658a5309d85b9875251a705d091b133fc678bfe33bdd6160d6c8f23d82597e",
+  "pythonAuditControllerSha256": "affe831b8d7bf49808c36575931ab243b2a39d21df20f99a78db3f292b637e30",
+  "pythonAuditReportSha256": "c9695c10db0b9e42b7a660d3d7fd9c22bb8ea6166df6adb06513729c9ca7b73c",
+  "pythonVersions": {
+    "python": "3.13.5 | packaged by conda-forge | (main, Jun 16 2025, 08:27:50) [GCC 13.3.0]",
+    "numpy": "2.2.6",
+    "scipy": "1.17.0",
+    "pyampd": "0.0.1"
+  },
+  "ampdSourceSha256": "bf13c9bdc3745adf91738e9b90fba6854e6a8f14b1779cf120a9ab6cf1396fc5",
+  "fixtureSha256": "db0eae6bdc76c8ce73a3c03e9476356f9eb9e9db25ee39a0bc6836c7a89461f0",
+  "jsSourceSha256": "65210ab9067f7ed5b2b9c1e350b5b8dd538c3a7a078bf76b34d7d79ce10aa382",
+  "scope": "Raw synthetic PPG to unnormalized features; no model/normalization/clinical claim."
+}

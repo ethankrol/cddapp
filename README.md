@@ -48,3 +48,18 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+<!-- CDD documentation index v1 -->
+## Blood-pressure prototype: start here
+
+- [Plain-language explanation](docs/BP_Project_Explained_Simply.md)
+- [Engineering results and calibration design](docs/CDD_Blood_Pressure_Engineering_Status_and_Calibration.md)
+- [Repository layout and cleanup details](docs/Repository_Organization.md)
+
+The physical-iPhone synthetic tests passed using the original ONNX model.
+This is a research/test flow; real-sensor acquisition and BP accuracy validation
+remain separate work. Keep the model, normalization and fixtures together.
+
+This project currently preserves its customized `ios` project in Git. Build the
+existing Xcode workspace; do not regenerate it with a clean prebuild unless its
+manual native changes have first been migrated into reproducible config plugins.

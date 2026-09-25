@@ -1,0 +1,8 @@
+{
+  "memoryAddonVersion": 1,
+  "modelSha256": "a8e26e25b852344814e4a474e73e92b9f8d40845c20948fdcce828c9e4f12fce",
+  "fixtureSha256": "10ddfcddb8a5aaf2fe5098b5565ef018a6872580ade2d1eb7f839d1d920631a8",
+  "onnxRuntimeVersion": "1.24.3",
+  "nativeSourceSha256": "9eb9c09a97a4f424405d65548859cbdd78f5c8f25d3e8b63b05967c173079937",
+  "protocolSourceSha256": "7f6451f394599f17d7449b77989e57fa8676c5ebf58d21740a690af6625d1e30"
+}

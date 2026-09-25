@@ -9,7 +9,8 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rithikamathew.cddapp"
     },
     "android": {
       "adaptiveIcon": {
@@ -39,7 +40,9 @@
           }
         }
       ],
-      "expo-sqlite"
+      "expo-sqlite",
+      "onnxruntime-react-native",
+      "expo-asset"
     ],
     "experiments": {
       "typedRoutes": true,

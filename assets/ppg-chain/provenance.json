@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "test": "cdd_raw_ppg_chain",
+  "synthetic": true,
+  "referenceSha256": "38ddaf0b51ee94b4c669993bd786c20694cf7a988e162784341b67cfa35305a5",
+  "referenceControllerSha256": "acf24afc8fd473fae1d7437e1754a1b75664e8808017875549a794bda26d7f84",
+  "referenceCreatedAt": "2026-09-25T03:37:32.834432+00:00",
+  "sourceHashes": {
+    "model": "a8e26e25b852344814e4a474e73e92b9f8d40845c20948fdcce828c9e4f12fce",
+    "normalization": "bc8a28b7ca84faa00644fa7d13ae706705ecd47b9543296753273555be3aba41",
+    "export_report": "f2c752c064aa511b74013205b36e78e9f1decb24da2a032d001d2732ad10f82e",
+    "smoke_fixture": "10ddfcddb8a5aaf2fe5098b5565ef018a6872580ade2d1eb7f839d1d920631a8",
+    "ppg_fixture": "db0eae6bdc76c8ce73a3c03e9476356f9eb9e9db25ee39a0bc6836c7a89461f0"
+  },
+  "preprocessingJsSha256": "65210ab9067f7ed5b2b9c1e350b5b8dd538c3a7a078bf76b34d7d79ce10aa382",
+  "chainCoreSha256": "4a01d30ba835d206c9ff1cf043c5b042a09163708328f403e2731f6814a924a9",
+  "runtimeAdapterSha256": "fd5b66e1bc0ae9ac7ba0e90a7588408efbc5bfd44371c3630e8d29e0893dd765",
+  "nativeWrapperSha256": "a28f2bd824ab45dc7a56102179e3b53bc5d6928cf808f8648a3ff1eb6b58b98c",
+  "requiredOnnxRuntimeVersion": "1.24.3",
+  "scope": "Synthetic raw PPG -> unnormalized features -> saved normalization -> original model; first four candidates only. No BP accuracy claim."
+}

@@ -1,3 +1,4 @@
+import BpSmokeTestLink from '@/components/BpSmokeTestLink';
 import { Ionicons } from '@expo/vector-icons';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
@@ -17,6 +18,7 @@ export default function HomePage() {
   return (
     <View style={styles.container}>
       <Header />
+      <BpSmokeTestLink />
     </View>
   );
 }

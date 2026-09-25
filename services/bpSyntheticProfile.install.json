@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "onnxSha256": "a8e26e25b852344814e4a474e73e92b9f8d40845c20948fdcce828c9e4f12fce",
+  "fixtureSha256": "10ddfcddb8a5aaf2fe5098b5565ef018a6872580ade2d1eb7f839d1d920631a8",
+  "onnxRuntimeVersion": "1.24.3"
+}

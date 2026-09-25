@@ -41,3 +41,50 @@ app-example
 # generated native folders
 /ios
 /android
+
+/iphone-test-backups/
+
+# CDD repository organization v1
+# Keep local dependencies and generated files out of version control.
+node_modules/
+.expo/
+dist/
+web-build/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+.DS_Store
+/iphone-test-backups/
+/metro.config.js.backup-*
+/.cdd-cleanup-*
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p8
+*.p12
+*.mobileprovision
+# Preserve this manually customized native iOS project in Git.
+# These negations override the former root /ios exclusion.
+!/ios/
+!/ios/**
+/ios/Pods/
+/ios/build/
+/ios/DerivedData/
+/ios/.symlinks/
+/ios/.xcode.env.local
+/ios/**/xcuserdata/
+/ios/**/*.xcuserstate
+# Preserve credential exclusions after the native-directory negation.
+*.pem
+*.key
+*.p8
+*.p12
+*.mobileprovision
+.DS_Store
+.env
+.env.*
+!.env.example
