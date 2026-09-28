@@ -1,0 +1,1988 @@
+{
+  "schemaVersion": 1,
+  "test": "cdd_expanded_ppg",
+  "synthetic": true,
+  "mode": "rolling",
+  "startedAt": "2026-09-25T23:05:22.995Z",
+  "complete": true,
+  "passed": true,
+  "cancelled": false,
+  "failure": null,
+  "cleanupFailure": null,
+  "modelSha256": "a8e26e25b852344814e4a474e73e92b9f8d40845c20948fdcce828c9e4f12fce",
+  "attempted": 1732,
+  "successful": 1732,
+  "parityFailures": 0,
+  "windows": [
+    {
+      "startSample": 0,
+      "finishedAt": "2026-09-25T23:05:53.368Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 66.92974996566772,
+      "totalWindowMs": 185.34991705417633,
+      "inferenceMeanMs": 3.011391216708768,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": null
+    },
+    {
+      "startSample": 625,
+      "finishedAt": "2026-09-25T23:05:58.383Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 68.1062079668045,
+      "totalWindowMs": 199.28987503051758,
+      "inferenceMeanMs": 2.9152396768331528,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 1250,
+      "finishedAt": "2026-09-25T23:06:03.354Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 50.9701669216156,
+      "totalWindowMs": 166.7123749256134,
+      "inferenceMeanMs": 3.0373425829795098,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 1875,
+      "finishedAt": "2026-09-25T23:06:08.384Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 67.98120892047882,
+      "totalWindowMs": 199.31904196739197,
+      "inferenceMeanMs": 3.047403559088707,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 2500,
+      "finishedAt": "2026-09-25T23:06:13.371Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 66.37970900535583,
+      "totalWindowMs": 185.2465000152588,
+      "inferenceMeanMs": 3.0049596601916897,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 3125,
+      "finishedAt": "2026-09-25T23:06:18.436Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 66.93424999713898,
+      "totalWindowMs": 199.26608395576477,
+      "inferenceMeanMs": 3.0048176795244217,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 3750,
+      "finishedAt": "2026-09-25T23:06:23.423Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 66.96416592597961,
+      "totalWindowMs": 185.41679096221924,
+      "inferenceMeanMs": 2.986557860528269,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 4375,
+      "finishedAt": "2026-09-25T23:06:28.421Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 68.98804199695587,
+      "totalWindowMs": 199.301167011261,
+      "inferenceMeanMs": 2.9337304085493088,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 5000,
+      "finishedAt": "2026-09-25T23:06:33.409Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 67.81124997138977,
+      "totalWindowMs": 185.62333297729492,
+      "inferenceMeanMs": 2.992633169697177,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 5625,
+      "finishedAt": "2026-09-25T23:06:38.423Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 67.62224996089935,
+      "totalWindowMs": 199.26549994945526,
+      "inferenceMeanMs": 2.93909765034914,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 6250,
+      "finishedAt": "2026-09-25T23:06:43.410Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 66.20554196834564,
+      "totalWindowMs": 184.9520000219345,
+      "inferenceMeanMs": 2.951200239119991,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 6875,
+      "finishedAt": "2026-09-25T23:06:48.425Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 67.5547080039978,
+      "totalWindowMs": 199.4933750629425,
+      "inferenceMeanMs": 2.8954740054905415,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 7500,
+      "finishedAt": "2026-09-25T23:06:53.412Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 65.82162499427795,
+      "totalWindowMs": 185.4875830411911,
+      "inferenceMeanMs": 3.0221922474522747,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 8125,
+      "finishedAt": "2026-09-25T23:06:58.444Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 68.94491696357727,
+      "totalWindowMs": 216.12716698646545,
+      "inferenceMeanMs": 3.0360103994607925,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 8750,
+      "finishedAt": "2026-09-25T23:07:03.431Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 70.72429203987122,
+      "totalWindowMs": 201.98395800590515,
+      "inferenceMeanMs": 3.0253024062802716,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 9375,
+      "finishedAt": "2026-09-25T23:07:08.429Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 66.35108304023743,
+      "totalWindowMs": 199.3206250667572,
+      "inferenceMeanMs": 2.9301719330251217,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 10000,
+      "finishedAt": "2026-09-25T23:07:13.432Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 74.3692090511322,
+      "totalWindowMs": 201.6131250858307,
+      "inferenceMeanMs": 2.9697433210188344,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 10625,
+      "finishedAt": "2026-09-25T23:07:18.431Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 60.277957916259766,
+      "totalWindowMs": 199.37508296966553,
+      "inferenceMeanMs": 2.8429947420954704,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 11250,
+      "finishedAt": "2026-09-25T23:07:23.417Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 62.95870792865753,
+      "totalWindowMs": 185.00633299350739,
+      "inferenceMeanMs": 2.9145725311771518,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 11875,
+      "finishedAt": "2026-09-25T23:07:28.432Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 66.66779100894928,
+      "totalWindowMs": 199.34500002861023,
+      "inferenceMeanMs": 2.9554908461868763,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 12500,
+      "finishedAt": "2026-09-25T23:07:33.419Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 67.93133401870728,
+      "totalWindowMs": 184.99991703033447,
+      "inferenceMeanMs": 2.8889422262868574,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 13125,
+      "finishedAt": "2026-09-25T23:07:38.434Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 60.99083399772644,
+      "totalWindowMs": 191.80254197120667,
+      "inferenceMeanMs": 2.943221379071474,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 13750,
+      "finishedAt": "2026-09-25T23:07:43.421Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 66.34650003910065,
+      "totalWindowMs": 185.43512499332428,
+      "inferenceMeanMs": 3.0333441457440777,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 14375,
+      "finishedAt": "2026-09-25T23:07:48.452Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 71.1304589509964,
+      "totalWindowMs": 216.05095899105072,
+      "inferenceMeanMs": 2.946096371859312,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 15000,
+      "finishedAt": "2026-09-25T23:07:53.423Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 65.80279099941254,
+      "totalWindowMs": 185.4910410642624,
+      "inferenceMeanMs": 2.9753589360944686,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 15625,
+      "finishedAt": "2026-09-25T23:07:58.437Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 66.21854197978973,
+      "totalWindowMs": 199.3107920885086,
+      "inferenceMeanMs": 2.9366316199302673,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 16250,
+      "finishedAt": "2026-09-25T23:08:03.424Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 65.27825009822845,
+      "totalWindowMs": 185.22495806217194,
+      "inferenceMeanMs": 2.941108807440727,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 16875,
+      "finishedAt": "2026-09-25T23:08:08.423Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 66.18687498569489,
+      "totalWindowMs": 199.3764579296112,
+      "inferenceMeanMs": 2.939700447022915,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 17500,
+      "finishedAt": "2026-09-25T23:08:13.409Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 61.448874950408936,
+      "totalWindowMs": 185.03195893764496,
+      "inferenceMeanMs": 2.934036212582742,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 18125,
+      "finishedAt": "2026-09-25T23:08:18.424Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 59.893792033195496,
+      "totalWindowMs": 199.356791973114,
+      "inferenceMeanMs": 2.865486942231655,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 18750,
+      "finishedAt": "2026-09-25T23:08:23.411Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 61.3350830078125,
+      "totalWindowMs": 185.30333292484283,
+      "inferenceMeanMs": 2.8786155831429268,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 19375,
+      "finishedAt": "2026-09-25T23:08:28.443Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 72.20262503623962,
+      "totalWindowMs": 216.0428340435028,
+      "inferenceMeanMs": 2.9384453408420086,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 20000,
+      "finishedAt": "2026-09-25T23:08:33.413Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 67.25987505912781,
+      "totalWindowMs": 185.04345905780792,
+      "inferenceMeanMs": 2.9512593707730694,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 20625,
+      "finishedAt": "2026-09-25T23:08:38.444Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 73.21895802021027,
+      "totalWindowMs": 216.0532910823822,
+      "inferenceMeanMs": 2.9715391024947166,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 21250,
+      "finishedAt": "2026-09-25T23:08:43.415Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 64.7766250371933,
+      "totalWindowMs": 186.2855830192566,
+      "inferenceMeanMs": 3.0373265627891786,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 21875,
+      "finishedAt": "2026-09-25T23:08:48.429Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 65.83020901679993,
+      "totalWindowMs": 199.27695906162262,
+      "inferenceMeanMs": 2.94830983877182,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 22500,
+      "finishedAt": "2026-09-25T23:08:53.416Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 63.89454197883606,
+      "totalWindowMs": 185.09712505340576,
+      "inferenceMeanMs": 2.9315079873608005,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 23125,
+      "finishedAt": "2026-09-25T23:08:58.448Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 75.68616700172424,
+      "totalWindowMs": 216.02874994277954,
+      "inferenceMeanMs": 2.9548346884548664,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 23750,
+      "finishedAt": "2026-09-25T23:09:03.435Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 71.27354204654694,
+      "totalWindowMs": 202.50075006484985,
+      "inferenceMeanMs": 2.99473387195218,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 24375,
+      "finishedAt": "2026-09-25T23:09:08.433Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 63.20949995517731,
+      "totalWindowMs": 199.33441591262817,
+      "inferenceMeanMs": 2.8751472122967243,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 25000,
+      "finishedAt": "2026-09-25T23:09:13.420Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 67.80904197692871,
+      "totalWindowMs": 185.25587499141693,
+      "inferenceMeanMs": 2.9676087133346067,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 25625,
+      "finishedAt": "2026-09-25T23:09:18.435Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 64.65054106712341,
+      "totalWindowMs": 199.3645830154419,
+      "inferenceMeanMs": 2.933850299566984,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 26250,
+      "finishedAt": "2026-09-25T23:09:23.438Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 71.35466599464417,
+      "totalWindowMs": 201.79095804691315,
+      "inferenceMeanMs": 2.9842957488952147,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 26875,
+      "finishedAt": "2026-09-25T23:09:28.453Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 71.44887495040894,
+      "totalWindowMs": 216.0512499809265,
+      "inferenceMeanMs": 2.9552383422851562,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 27500,
+      "finishedAt": "2026-09-25T23:09:33.423Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 69.98366701602936,
+      "totalWindowMs": 185.26887500286102,
+      "inferenceMeanMs": 2.947002699298243,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 28125,
+      "finishedAt": "2026-09-25T23:09:38.438Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 67.27420902252197,
+      "totalWindowMs": 199.30837500095367,
+      "inferenceMeanMs": 2.9632331281900406,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 28750,
+      "finishedAt": "2026-09-25T23:09:43.425Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 70.9435830116272,
+      "totalWindowMs": 201.88229203224182,
+      "inferenceMeanMs": 2.9908387430252565,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 29375,
+      "finishedAt": "2026-09-25T23:09:48.423Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 65.24483299255371,
+      "totalWindowMs": 199.39112496376038,
+      "inferenceMeanMs": 2.9268880300223827,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 30000,
+      "finishedAt": "2026-09-25T23:09:53.410Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 65.4392499923706,
+      "totalWindowMs": 185.20583307743073,
+      "inferenceMeanMs": 2.958784991695035,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 30625,
+      "finishedAt": "2026-09-25T23:09:58.425Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 66.22487497329712,
+      "totalWindowMs": 199.38112497329712,
+      "inferenceMeanMs": 2.8961823768913746,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 31250,
+      "finishedAt": "2026-09-25T23:10:03.428Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 70.55720901489258,
+      "totalWindowMs": 201.8394169807434,
+      "inferenceMeanMs": 2.9946021303053825,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 31875,
+      "finishedAt": "2026-09-25T23:10:08.427Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 66.51004099845886,
+      "totalWindowMs": 199.3107500076294,
+      "inferenceMeanMs": 2.967704351991415,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 32500,
+      "finishedAt": "2026-09-25T23:10:13.430Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 70.3839590549469,
+      "totalWindowMs": 202.0819170475006,
+      "inferenceMeanMs": 2.986712432676746,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 33125,
+      "finishedAt": "2026-09-25T23:10:18.428Z",
+      "candidates": 32,
+      "channelValuesChecked": 24000,
+      "timingValuesChecked": 64,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.00002288818359375,
+        0.00000762939453125
+      ],
+      "preprocessAndChecksMs": 65.26349997520447,
+      "totalWindowMs": 199.38070797920227,
+      "inferenceMeanMs": 2.934660140424967,
+      "mean": [
+        111.89123106002808,
+        54.78678846359253
+      ],
+      "median": [
+        111.52591705322266,
+        54.74235153198242
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 31,
+        "currentCandidates": 32,
+        "maxOutputDifferenceMmhg": [
+          0.01119232177734375,
+          0.009243011474609375
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    },
+    {
+      "startSample": 33750,
+      "finishedAt": "2026-09-25T23:10:23.415Z",
+      "candidates": 31,
+      "channelValuesChecked": 23250,
+      "timingValuesChecked": 62,
+      "maxRawDifference": 0,
+      "maxTimingDifference": 0,
+      "maxNormalizedDifference": 0,
+      "maxOutputDifferenceMmhg": [
+        0.0000152587890625,
+        0.000011444091796875
+      ],
+      "preprocessAndChecksMs": 65.20574998855591,
+      "totalWindowMs": 185.23183393478394,
+      "inferenceMeanMs": 2.953217710218122,
+      "mean": [
+        111.86273833244077,
+        54.779519727153165
+      ],
+      "median": [
+        111.52592468261719,
+        54.74232482910156
+      ],
+      "overlapWithPrevious": {
+        "matchedExactIntervals": 26,
+        "previousCandidates": 32,
+        "currentCandidates": 31,
+        "maxOutputDifferenceMmhg": [
+          0.01180267333984375,
+          0.00909423828125
+        ],
+        "interpretation": "Exact shared intervals only; mismatched boundaries are not paired. Differences measure window sensitivity, not BP error."
+      }
+    }
+  ],
+  "sessionReleased": true,
+  "maxArrivalLagMs": 16.82254195213318,
+  "deadlineMisses": 0,
+  "maxBufferSamples": 3750,
+  "energyMeasured": false,
+  "memoryMeasured": false,
+  "appColdLaunchMeasured": false,
+  "sensorAcquisition": false,
+  "calibrationApplied": false,
+  "bpAccuracyEvaluated": false,
+  "qualityValidated": false,
+  "aggregation": "Per-window unweighted mean and median, software diagnostics only; overlapping windows are never pooled.",
+  "signal": "Repeated synthetic 30-second fixture. Artificial wrap boundaries; no BLE, motion or missing samples.",
+  "referenceChecksIncludedInWorkload": true,
+  "adapterTimings": {
+    "importMs": 9.052708983421326,
+    "assetResolveMs": 3.7434170246124268,
+    "sessionCreateMs": 114.19183397293091
+  },
+  "durationSeconds": 300,
+  "pacingStartAfterSessionSetup": true,
+  "pacingStartedAt": "2026-09-25T23:05:23.171Z",
+  "inferencePassed": true,
+  "finishedAt": "2026-09-25T23:10:23.416Z",
+  "totalWallMs": 300369.6794580221,
+  "provenance": {
+    "schemaVersion": 1,
+    "referenceSha256": "88e4ad195fe39cfdaebfa8f7c2cb7b76d0d29b9fd3fa63f61c7d3eae81d0117e",
+    "preprocessingSha256": "e8df2ebfd4168e76f68874e7a29f9173110b28e5e85ad04cfb4a3ba18a0aa9ee",
+    "sourceHashes": {
+      "services/bpPpgPreprocess.js": "65210ab9067f7ed5b2b9c1e350b5b8dd538c3a7a078bf76b34d7d79ce10aa382",
+      "services/bpPpgChainOrt.js": "fd5b66e1bc0ae9ac7ba0e90a7588408efbc5bfd44371c3630e8d29e0893dd765",
+      "assets/models/onnx_export/cbp_tnet.onnx": "a8e26e25b852344814e4a474e73e92b9f8d40845c20948fdcce828c9e4f12fce",
+      "assets/models/onnx_export/normalization.json": "bc8a28b7ca84faa00644fa7d13ae706705ecd47b9543296753273555be3aba41",
+      "assets/models/onnx_export/export_report.json": "f2c752c064aa511b74013205b36e78e9f1decb24da2a032d001d2732ad10f82e"
+    },
+    "payloadHashes": {
+      "app/ml-ppg-expanded.tsx": "cf8c4b668cf5ff3e3818fbd0d60a234461882501ff9a53c273a58058ba116f11",
+      "components/BpExpandedLink.tsx": "b86c1dbbc34a81355c6ec801111c5780ecdfc7839bde933de9d50481c8583bb7",
+      "services/bpExpanded.native.ts": "cbd4266418356af599bf7480526023b70720139b28730b7680469209a602c1fd",
+      "services/bpExpanded.ts": "3778cec22271753eb0e22f20cf7c3682623fab87399149a2f16a81dd46863802",
+      "services/bpExpandedCore.d.ts": "8b100feefc679b24d0b30d9c8e27651a9443e38a9a99891bec48d286a92469c1",
+      "services/bpExpandedCore.js": "dab3794a7bbb83c9218d5266c4981b5c237ee6ffa1ee6a5f1ded594974daacb8"
+    },
+    "scope": "Synthetic software verification; no live sensor/accuracy result."
+  },
+  "onnxRuntimeVersion": "1.24.3",
+  "executionProvider": "cpu",
+  "threads": 1,
+  "referenceOnnxRuntimeVersion": "1.19.2",
+  "sourceDigestVerification": "Installer checked hashes. Bundled identifiers are not runtime attestation.",
+  "platform": "ios",
+  "osVersion": "26.6.2",
+  "developmentBuild": false
+}

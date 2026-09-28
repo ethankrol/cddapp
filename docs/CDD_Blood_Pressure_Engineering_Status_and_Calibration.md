@@ -2,7 +2,7 @@
 
 **Project:** `ethankrol/cddapp`, working branch `rithika-ML`  
 **Prepared for:** Rithika Mathew  
-**Status date:** September 25, 2026, evidence through 12:18 a.m. EDT (04:18 UTC)  
+**Status date:** September 27, 2026; includes expanded iPhone reports recorded September 25  
 **Scope:** Engineering documentation and research recommendations. Proposed features are explicitly distinguished from implemented and observed behavior.
 
 ## Start here: the project in plain English
@@ -10,14 +10,81 @@
 For the shorter worked explanation, read [BP_Project_Explained_Simply.md](BP_Project_Explained_Simply.md).
 
 - **What passed:** Rithika ran the installed app on her physical iPhone and supplied its reports. The app performed the model calculations locally and matched the saved Python results. The assistant prepared code, checked calculations and reviewed evidence; it did not remotely operate the phone.
-- **Why it was fast:** the app already contained a synthetic file representing 30 seconds of PPG. It did not wait 30 seconds to collect a new recording. It found 31 candidate beats and checked/inferred the first four. The complete connected test call took about 0.166 seconds. Real acquisition would still take the selected recording duration.
-- **Why it fits:** the approximately 20 MB ONNX model has a fixed size. New signal samples do not grow the model. The separate five-cycle test observed approximately 35.1 MB baseline and 72.1 MB sampled peak whole-app physical footprint. Continuous acquisition, battery use and long-session stability remain separate work.
+- **Why it was fast:** the app already contained a synthetic file representing 30 seconds of PPG. The expanded test now processes all 31 original candidates plus five shifted windows (189 calls) in about 1.075 seconds. The separate paced tests intentionally wait for incoming sample chunks: five-minute block and rolling replays, and a twenty-minute block replay, completed. Real acquisition still takes the selected recording duration.
+- **Why it fits:** the approximately 20 MB ONNX model has a fixed size. New signal samples do not grow the model. The separate five-cycle test observed approximately 35.1 MB baseline and 72.1 MB sampled peak whole-app physical footprint. The new twenty-minute block replay completed with a 3,750-sample input-buffer cap, but did not measure whole-app memory. Live acquisition, battery use and longer/device-diverse stability remain separate work.
 - **Calibration:** estimate how far a person's model predictions differ from paired reference cuff readings, then add separate SBP and DBP corrections. If the average corrections are +7 and +4, a model output of 121/77 becomes 128/81. Negative corrections are subtracted. This example is fictional; a 30-day validity policy has not been validated.
 - **Model identity:** the phone executes `cbp_tnet.onnx`, converted from the original `cBP-Tnet_Model.pth`. New CNN/Tnet comparison checkpoints were not automatically deployed. Exact byte fingerprints and the export report identify the matching package; matching files do not establish BP accuracy.
 - **Other models:** a smaller CNN and cBP-Tnet were compared across three seeds under a shared new recipe. No benchmark of external published state-of-the-art methods has been run. The smaller CNN is a development candidate, not the current phone model.
-- **Repository handoff:** inspection on September 25 found remote `rithika-ML` still at `2852dd82dff3afb5649a4be53802836f5b578606`, with the original checkpoint but without later mobile test code/assets. A guarded Mac organizer has been prepared; its execution and current local fingerprints still require the user-run report.
+- **Repository handoff:** a fresh September 27 download found `rithika-ML` at `2bd3424767acb67aece47fa2fddb7cfcd21b4fae`. The actual PTH, ONNX and normalization bytes match the tested original package. Earlier native/mobile tests and organized research scripts are committed; the expanded all-candidate/replay test files and later evidence are still absent from that checked commit. No push was performed during this audit.
 
 The two assigned documentation/mock-inference tasks meet their stated scope. Integrating actual sensor acquisition, calibration UI/storage and establishing useful real-world BP accuracy are additional tasks. The detailed historical sections below retain the limits that applied at each test stage.
+
+## September 27 update: GitHub bytes verified and published-model benchmark prepared
+
+A fresh clone of `ethankrol/cddapp` branch `rithika-ML`, commit `2bd3424767acb67aece47fa2fddb7cfcd21b4fae` (`testing`), was inspected. Actual file hashing confirmed the original checkpoint (`2cabfe0c...`), phone ONNX (`a8e26e25...`) and normalization (`bc8a28b7...`) match the previously tested package. Exact hashes are retained in `GitHub_Status_and_Update.md` and `github_audit_20260927.json`. This verifies the deployed model's identity, not its BP accuracy or superiority. The default branch `main` was not treated as equivalent to the working branch.
+
+The committed tree now contains native integration, smoke/profiling/memory tests, raw preprocessing and the four-beat chain. It excludes generated dependency and backup folders. It still lacks `app/ml-ppg-expanded.tsx`, the corresponding service/link/assets, and the latest expanded evidence. The local Mac may already contain them; `check_repo.py` checks their exact known bytes before printing scoped staging commands. Documentation and Git update instructions are included. Nothing was deleted or pushed by this audit.
+
+The committed training source was recovered and its SHA-256 matches `18658a5309d85b9875251a705d091b133fc678bfe33bdd6160d6c8f23d82597e`. The saved repaired comparison controller matches `1435d394be538b088b0581192d130ea5e39a6c9ccae3470eff27cc5c760c1a29`. This resolves the earlier source-upload blocker for the next architecture benchmark.
+
+The new `cdd-model-benchmark` package implements four arms: the existing small CNN, cBP-Tnet, and adaptations of official XResNet1D-50 and Inception1D backbones. All use the frozen three-channel beat cache, normalized timing with the invalid upstroke proxy masked, training-only target scaling and the shared prior training recipe. Seeds 125/126/127 are predeclared. One submission schedules a CPU identity/hash check, twelve GPU tasks with maximum concurrency two, and a CPU summary that retains failures/incomplete runs. Each GPU task is capped at 90 minutes; maximum allocation is 18 GPU-hours, roughly nine hours with two slots continuously available, plus queue and CPU phases. Models are initialized from scratch. The two anchors are repeated so all four arms have a common runtime/source snapshot.
+
+The author backbones and GPL license are pinned to `AI4HealthUOL/ppg-ood-generalization` commit `780ff307a8cfa1404c78450bc94bc429887733f7`. The input representation and regression/timing heads are adapted to this project; this does not reproduce the publication's longer single-channel window experiments. Existing feature/label problems and uncertified historical cache identities remain limitations. No test split is read. Filtering changes, LightGBM, corrected labels and window-based retraining are separate experiments.
+
+Package-level CPU checks exercise real synthetic forward/backward operations, target scaling, state-dictionary round trips, exact CNN/Tnet anchor compatibility, source guards and mocked Slurm/summary behavior. They do not run the HiPerGator training or measure BP accuracy. The package's `LOCAL_VERIFICATION.json` records the final checks. New validation MAEs, candidate export, device profiling and any phone-model replacement remain pending actual execution and review.
+
+## September 27 update: all-candidate and paced iPhone tests completed
+
+Four attached JSON reports and one inline idle report were supplied for review. The recorded runs occurred September 25 on non-development iOS 26.6.2, ONNX Runtime React Native 1.24.3, CPU and one thread. Their model identifier remains the original deployed ONNX hash. The four attachments' exact bytes are preserved in `cdd-expanded-results-20260927.zip`; the inline idle report is transcribed and explicitly identified as such.
+
+| Test | Windows | Model calls | Outcome |
+|---|---:|---:|---|
+| Full original and five shifted windows | 6 | 189 / 189 | Passed; includes all 31 original candidates |
+| Five-minute fixed blocks | 10 | 310 / 310 | Passed |
+| Five-minute rolling, 30-second window / 5-second hop | 55 | 1,732 / 1,732 | Passed |
+| Twenty-minute fixed blocks | 40 | 1,240 / 1,240 | Passed |
+| Five-minute idle control | 0 | 0 | Idle protocol passed; inference intentionally not run |
+
+The inference runs total **3,471 successful calls across 111 windows**, with zero reported parity failures, no run/cleanup failures and successful session release. Every window reports zero feature/timing/normalization differences. Recalculation of all 189 full-mode phone/reference pairs reproduces output errors, means and medians. Maximum phone/Python differences are **0.0000228882 SBP / 0.0000114441 DBP mmHg**, below the 0.01-per-output tolerance. Original Python-reference JSON bytes have not been supplied for a fresh independent model/reference execution. Replay output arrays are omitted by design; their aggregate records and schedules were checked, not every unreported raw pair.
+
+Mean complete-window processing times were **155.89 ms full**, **189.68 ms five-minute blocks**, **195.66 ms rolling**, and **186.29 ms twenty-minute blocks**. The slowest window was **216.13 ms**. Replay arrival lag stayed below 17.2 ms, with no misses of the code's one-second arrival deadline. Window times include reference checking and scheduling work; these are not standalone native-call latency or power measurements. Replay buffers reached 3,750 samples, which does not establish bounded whole-app memory because other state and report rows also remain in memory.
+
+Exact shared intervals exhibited maximum window-to-window changes of **0.0118027 / 0.0092430 mmHg (SBP/DBP)**. This diagnostic compares different window contexts, whereas the 0.01 threshold compares phone and Python on the same window. The code does not impose a window-sensitivity threshold; the SBP diagnostic therefore does not contradict the reported parity PASS. Full-mode overlap arithmetic reproduces, and rolling summaries match the six-phase pattern. Legacy filtering resets per window and the detector examines the whole window; this is paced window replay, not a continuously stateful filter or live sensor acquisition.
+
+The repeated fixture and overlapping intervals are not independent physiological observations. Per-window means and medians are diagnostic aggregation only. These reports do not evaluate calibration or BP accuracy, and they contain no energy, long-run memory or cold-launch measurements. The idle mode intentionally creates no model session, so `attempted: 0`, `inferencePassed: null` and `sessionReleased: false` are expected. Twenty-minute rolling replay remains unreported; twenty-minute fixed-block replay is now complete. See `Expanded_iPhone_Test_Results.md` for the plain-English explanation and reproducible report-audit command.
+
+## September 25 update: filter audit complete; parallel model research
+
+The user supplied completion of **CPU job 43309218**, which examined eight training subjects and eight validation subjects, with three recordings per subject (48 recordings total). Every filter arm produced candidates for every sampled recording. Input/filter failures, detector failures, nearly flat segments and causal batch-versus-chunk parity failures were all zero in the supplied summary. This is a successful execution diagnostic, not a BP-accuracy experiment. Full report bytes have not been attached; the following values come from pasted stdout.
+
+| Filter | Train / validation candidates | Train / validation endpoint maxima | Train / validation median filtering time |
+|---|---:|---:|---:|
+| No additional filter | 1,068 / 971 | 96.82% / 95.16% | 0.021 / 0.022 ms |
+| Existing Kalman | 1,069 / 971 | 99.91% / 99.90% | 8.331 / 8.926 ms |
+| Causal band-pass | 1,072 / 972 | 100% / 100% | 1.211 / 1.250 ms |
+| Offline forward/backward band-pass | 1,070 / 966 | 100% / 100% | 1.315 / 1.333 ms |
+
+These timings measure filtering on the audit host. They exclude the separately reported detector/diagnostic time and are not iPhone measurements. More detected beats do not necessarily mean better data. The causal filter's chunk-parity result supports carrying its state between chunks of the same recording, but does not validate the full rolling detector, live acquisition or BP prediction.
+
+The result strengthens a specific implementation finding: filtering does not fix a rise-time feature defined using the maximum inside a peak-to-peak segment. A peak-started beat usually has its maximum at an edge; that is consistent with the segmentation, not automatically a detector failure. A foot/trough-to-peak definition would be a different feature contract requiring review, new normalization and retraining. The existing ABP label-window issue must be studied separately; PPG-side execution success does not validate BP labels.
+
+The supplied `.sbatch` file has been read. It requests `hpg-b200`, one GPU, four CPUs, 64 GB and loads `pytorch/2.8.0`; its existing eight-hour job launches the original training script. Deep-model training should use GPUs. Literature review, short signal audits and initial tree baselines can use CPU. A separate scheduling utility has been prepared with a 90-minute per-task cap and maximum array concurrency of two, requiring explicitly supplied isolated experiment workers. Eleven local scheduler tests passed using fake Slurm and a mocked GPU probe; no cluster job was submitted by those tests. It is infrastructure, not an implementation or execution of the new models.
+
+Parallel primary-source review shortlisted **XResNet1d50 and Inception1D** as the first external neural architectures and **LightGBM** as a feature baseline; XResNet1d101 is a later depth comparison. Official implementations and pinned source revisions are recorded in `cdd-next-research/model_shortlist.md`. The published neural benchmark uses single-channel signal windows; adapting it to three-channel padded beats plus timing would not reproduce the paper. Its subject-seen “Calib” setting is also different from the proposed monthly cuff-offset calibration. Published MAEs must not be presented as results on this project's data. Sources: [PPG benchmark](https://arxiv.org/html/2502.19167v2), [author neural code](https://github.com/AI4HealthUOL/ppg-ood-generalization), [Inventec benchmark code](https://github.com/inventec-ai-center/bp-benchmark).
+
+At this September 25 stage, integration still awaited the source-only packet and expanded phone tests were pending. The September 27 updates above supersede those blockers: the exact source/controller have been recovered, the benchmark is implemented, and expanded device reports have been reviewed. External-model training results and phone deployment of new candidates remain pending.
+
+The report is `/orange/xiangyan/rithika/cdd/outputs/iphone_inference/filter_comparison_20260925T164819261393Z/filter_comparison_report.json`. To display it, prefix its path with `cat`; the reported “Permission denied” came from asking Bash to execute a JSON file and is not evidence that the audit failed.
+
+## September 25 update: work while the physical-device tests wait
+
+The user supplied successful completion of **HiPerGator CPU job 43308385**. The new all-candidate reference contains 31/32/31/32/31/32 outputs at offsets 0/625/1250/1875/2500/3125 samples, **189 total**. Reported output: `/orange/xiangyan/rithika/cdd/outputs/iphone_inference/full_ppg_reference_v1.json`; reported SHA-256: `88e4ad195fe39cfdaebfa8f7c2cb7b76d0d29b9fd3fa63f61c7d3eae81d0117e`. This is supplied execution-log evidence; JSON bytes have not yet been attached for independent inspection. The expanded phone test remains pending.
+
+A separate `cdd-filter-comparison.zip` is now implemented for CPU-only work without an iPhone. It compares no additional filtering, the existing Kalman filter, causal Butterworth band-pass, and forward/backward offline band-pass. Its 0.5–8 Hz band at 125 Hz is an experimental choice, not a validated optimum. Butterworth N=2 band-pass has fourth-order transfer-function behavior; forward/backward application doubles the effective order, so those two arms are not a phase-only comparison. AMPD and legacy beat segmentation remain fixed.
+
+Nine local tests passed, and all four filters were run on eight generated signal cases. Carrying causal state across irregular chunks matched batch causal filtering exactly. Synthetic filter changes affected pulse shape and some candidate counts; they did not fix the degenerate endpoint-based upstroke proxy. These are preprocessing diagnostics, not BP accuracy or phone measurements. The package's read-only HPG worker samples up to eight subjects × three segments per train/validation split, records coverage/failures/diagnostics, verifies input hashes and saves no recorded waveforms. The recorded-data run subsequently completed as job 43309218, reported in the newer update above; the worker reads no ABP, labels, models, caches or test split.
+
+The research-source packet was created on HiPerGator but has not been attached in this session. External architecture training still requires those actual controller/loader bytes. No SOTA model has been trained or updated on the phone. Calibration collection/persistence integration, repository cleanup execution, actual sensor/BLE acquisition, power and genuine cold-start measurements also remain pending as separately documented. See `Work_While_Phone_Tests_Wait.md` for the concise handoff and `cdd-filter-comparison/README.md` for submission commands.
 
 ## 1. Executive status
 
@@ -43,12 +110,12 @@ The matching-condition audit is now complete and reproduced both validation repo
 | Monthly collection, storage, and application | Sections 3.5–3.8 and 3.12 | Core policy/serialization implemented; collection UI, persistence/activation, and longitudinal validation remain pending |
 | Inputs, outputs, assumptions, and edge cases | Sections 3.6–3.9 and 3.12 | Pure-core tests pass; mobile integration/device tests remain pending |
 | Calibration flow and evaluation | Sections 3.8–3.10 | Current offline results recorded; proposed evaluation protocol specified |
-| Inference package and edge-computing design | Sections 4 and 6.22 | Original-model synthetic raw PPG → normalization → inference passes on iPhone; live wearable acquisition and recorded-signal validation remain pending |
+| Inference package and edge-computing design | Sections 4 and 6.22; September 27 update | Original-model synthetic raw PPG → normalization → inference passes on iPhone for all six windows; fixed and rolling replay tested; live acquisition and recorded-signal validation pending |
 | Repository artifact and target device path | Sections 2 and 4 | `.pth` push confirmed; local phone package installed; latest Git tracking of app/export files not yet checked |
-| Mock data and expected-output criteria | Sections 5.1 and 6.18–6.20 | Original normalized model fixture and separate raw-PPG feature fixture passed on iPhone; connected-chain Python oracle supplied and four-candidate phone test passed |
-| Raw PPG preprocessing on device | Section 6.19 | Hermes Release report passed: 31 candidates; exact numerical match on first four; one preprocessing-call duration of 45.500 ms |
-| On-device execution and observations | Sections 5.2–5.4, 5.9–5.13 and 6.22 | Three original profiles: 333/333 calls; separate memory run: 555/555 calls; new connected raw-input test: 4/4 calls with exact feature/normalization parity |
-| Memory and performance characterization | Sections 5.3, 5.6, 5.8–5.13 | Initial timing and five-cycle physical-footprint evidence recorded; full-trace recomputation, longer-session/device coverage, energy and app-launch measurements remain pending |
+| Mock data and expected-output criteria | Sections 5.1 and 6.18–6.20; September 27 update | Original normalized fixture, raw-PPG features and expanded connected chain passed; all 31 original candidates plus five shifted windows tested |
+| Raw PPG preprocessing on device | Section 6.19; September 27 update | Expanded reports show zero feature/timing/normalization differences for every scheduled window; raw-derived inputs feed inference |
+| On-device execution and observations | Sections 5.2–5.4, 5.9–5.13 and 6.22; September 27 update | Earlier profiles/memory/first-four chain retained; expanded four-run evidence adds 3,471/3,471 calls with zero reported parity failures, including twenty-minute fixed blocks |
+| Memory and performance characterization | Sections 5.3, 5.6, 5.8–5.13; September 27 update | Initial timing and five-cycle physical-footprint evidence recorded; replay timing recorded through twenty-minute blocks; memory during replay, energy, app-launch and broader device coverage pending |
 | Reproducible steps and follow-ups | Sections 5.5–5.7, 5.12 and 7 | Commands, procedures and a guarded automatic-memory installer included |
 
 **Release position:** Keep this model in an explicitly labeled research/test flow. Do not represent its synthetic outputs as the user’s BP or use this checkpoint for diagnosis or treatment. This position follows the observed model limitations and current AHA guidance on unvalidated cuffless devices. [R1]
@@ -1891,3 +1958,20 @@ External references below were checked September 24, 2026. They support the stat
 
 30. **[R30] ONNX Runtime.** *InferenceSession — JavaScript API.* Session execution, input/output names and resource release. https://onnxruntime.ai/docs/api/js/interfaces/InferenceSession.html . Checked September 25, 2026 UTC.
 31. **[R31] React Native.** *AppState.* Foreground/background state and change subscriptions. https://reactnative.dev/docs/appstate . Checked September 25, 2026 UTC.
+
+
+## September 25: full-candidate and paced-replay extension prepared
+
+**Preparation record, updated September 27:** the reference generator subsequently completed on HiPerGator as job 43308385, and supplied iPhone reports now confirm full-candidate inference plus five-minute fixed/rolling and twenty-minute fixed-block replay. See the September 27 update near the start of this document. Four candidates were the earlier scope choice, not a phone/model capacity limit.
+
+The additive `cdd-expanded-tests.zip` package introduces an all-beat screen, a CPU-only reference generator, five-/twenty-minute foreground replay, startup-test source and a research comparison plan. Independent Python preprocessing and normalization agree exactly with JavaScript for **all 31 original candidates** and five shifted windows: **189 candidates**, 141,750 channel values and 378 timing values; the same 142,128 normalized input values agree exactly. Expected model outputs were subsequently generated by job 43308385 and used in the supplied expanded phone runs.
+
+Twenty local checks passed: twelve numerical/control-flow cases, six installer cases and two reference-worker wiring/guard cases. Four TypeScript implementation/UI files passed syntax transpilation. Local model execution used explicit test doubles; replay used accelerated time. These do not constitute actual ONNX inference, a full app typecheck, an Xcode build or a new phone run.
+
+The five-minute fixed-block schedule processes ten windows/310 model calls; the rolling schedule processes 55 windows/1,732 calls, with a 30-second window advancing every five seconds. Both reuse one session and bound the replay input buffer to 3,750 samples. They repeat the existing synthetic signal, including artificial wrap boundaries, and reset legacy preprocessing per window. All candidate features and outputs are compared, and per-window unweighted means/medians are reported as diagnostics. Overlapping windows are not pooled into a clinical recording result. Exact shared intervals are compared for window sensitivity; nonmatching boundaries remain unpaired.
+
+The installer preserves existing model, preprocessing, native project, calibration and health storage. It checks pinned prerequisites and all 189 input oracles before adding files and a link; it backs up the edited screen and rolls back on write failure. Actual expanded memory, energy, physiological quality, sensor/BLE acquisition, stateful causal filtering and BP accuracy remain unmeasured/unvalidated. A five-iteration XCTest launch template and Apple Power Profiler protocol are included; neither was executed here. Fresh-process launch must not be labeled as guaranteed OS-cache-cold launch.
+
+The next proposed research shortlist is XResNet1d50/101, Inception1D and feature-based LightGBM alongside the existing small CNN. External methods have not yet been trained on this project data. The plan separates identity/label correction, filter/feature ablations and model architecture comparisons, with train-only normalization, patient-disjoint evaluation, identical calibration budgets and coverage reporting. The package collects three known HPG source files, without dataset arrays, to support implementation against the real loader/controller.
+
+Plain-English instructions and commands are in `cdd-expanded-tests/README.md` and `docs/Next_Tests_Explained_Simply.md`. Previous repository-cleanup work remains available separately; these prepared files have not been applied to the Mac repository by this session.

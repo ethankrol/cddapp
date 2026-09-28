@@ -1,0 +1,166 @@
+{
+  "scope": "Independent consistency/statistics checks on user-supplied reports, not independent model or device execution.",
+  "all_consistent": true,
+  "total_inference_calls": 3471,
+  "total_windows": 111,
+  "runs": [
+    {
+      "report": "reports/full_189_calls.json",
+      "sha256": "cdf7b499f3cc1e002985fa90023d89d78a4cfb8832b10b5b0ab7688db3a7be0b",
+      "mode": "full",
+      "duration_seconds": null,
+      "started_at": "2026-09-25T22:50:01.202Z",
+      "windows": 6,
+      "successful_calls": 189,
+      "consistency_checks_passed": true,
+      "total_wall_ms": 1075.0893329381943,
+      "maximum_arrival_lag_ms": 0,
+      "deadline_misses": 0,
+      "session_released": true,
+      "window_ms": {
+        "min": 139.10633301734924,
+        "mean": 155.88645801941553,
+        "median": 158.10945796966553,
+        "p95_nearest_rank": 163.6715830564499,
+        "max": 163.6715830564499
+      },
+      "mean_inference_call_ms_weighted_by_candidates": 2.781071158313247,
+      "maximum_output_difference_mmhg": [
+        2.288818359375e-05,
+        1.1444091796875e-05
+      ],
+      "channel_values_checked": 141750,
+      "timing_values_checked": 378,
+      "overlap_pair_comparisons": 5,
+      "matched_interval_comparisons": 130,
+      "maximum_overlap_output_difference_mmhg": [
+        0.01180267333984375,
+        0.009243011474609375
+      ]
+    },
+    {
+      "report": "reports/blocks_5min_310_calls.json",
+      "sha256": "996f9d6d548105154b275a35913741dac544f038010616fd8dabb578dbeca8e9",
+      "mode": "blocks",
+      "duration_seconds": 300,
+      "started_at": "2026-09-25T22:51:51.734Z",
+      "windows": 10,
+      "successful_calls": 310,
+      "consistency_checks_passed": true,
+      "total_wall_ms": 300303.13400006294,
+      "maximum_arrival_lag_ms": 16.744457960128784,
+      "deadline_misses": 0,
+      "session_released": true,
+      "window_ms": {
+        "min": 181.83487498760223,
+        "mean": 189.6801959991455,
+        "median": 185.5736669898033,
+        "p95_nearest_rank": 207.24866700172424,
+        "max": 207.24866700172424
+      },
+      "mean_inference_call_ms_weighted_by_candidates": 2.9869260814882095,
+      "maximum_output_difference_mmhg": [
+        1.52587890625e-05,
+        1.1444091796875e-05
+      ],
+      "channel_values_checked": 232500,
+      "timing_values_checked": 620,
+      "overlap_pair_comparisons": 0,
+      "matched_interval_comparisons": 0,
+      "maximum_overlap_output_difference_mmhg": null
+    },
+    {
+      "report": "reports/rolling_5min_1732_calls.json",
+      "sha256": "b1e3ad5a8d404caef3fb84ba2ffbe80127116f63a35aac3b3ab65d4ef76f80d4",
+      "mode": "rolling",
+      "duration_seconds": 300,
+      "started_at": "2026-09-25T23:05:22.995Z",
+      "windows": 55,
+      "successful_calls": 1732,
+      "consistency_checks_passed": true,
+      "total_wall_ms": 300369.6794580221,
+      "maximum_arrival_lag_ms": 16.82254195213318,
+      "deadline_misses": 0,
+      "session_released": true,
+      "window_ms": {
+        "min": 166.7123749256134,
+        "mean": 195.65975987911224,
+        "median": 199.30837500095367,
+        "p95_nearest_rank": 216.0512499809265,
+        "max": 216.12716698646545
+      },
+      "mean_inference_call_ms_weighted_by_candidates": 2.9572425934101085,
+      "maximum_output_difference_mmhg": [
+        2.288818359375e-05,
+        1.1444091796875e-05
+      ],
+      "channel_values_checked": 1299000,
+      "timing_values_checked": 3464,
+      "overlap_pair_comparisons": 54,
+      "matched_interval_comparisons": 1404,
+      "maximum_overlap_output_difference_mmhg": [
+        0.01180267333984375,
+        0.009243011474609375
+      ]
+    },
+    {
+      "report": "reports/blocks_20min_1240_calls.json",
+      "sha256": "5997fd00dc8ca5b60d4caea7f4c3eb939b827147f5a4b36410835634f7d3f316",
+      "mode": "blocks",
+      "duration_seconds": 1200,
+      "started_at": "2026-09-25T23:28:42.823Z",
+      "windows": 40,
+      "successful_calls": 1240,
+      "consistency_checks_passed": true,
+      "total_wall_ms": 1200338.1986250877,
+      "maximum_arrival_lag_ms": 17.18179202079773,
+      "deadline_misses": 0,
+      "session_released": true,
+      "window_ms": {
+        "min": 180.92112505435944,
+        "mean": 186.2939239382744,
+        "median": 185.15506255626678,
+        "p95_nearest_rank": 201.95175004005432,
+        "max": 201.99904191493988
+      },
+      "mean_inference_call_ms_weighted_by_candidates": 2.9186521265775927,
+      "maximum_output_difference_mmhg": [
+        1.52587890625e-05,
+        1.1444091796875e-05
+      ],
+      "channel_values_checked": 930000,
+      "timing_values_checked": 2480,
+      "overlap_pair_comparisons": 0,
+      "matched_interval_comparisons": 0,
+      "maximum_overlap_output_difference_mmhg": null
+    },
+    {
+      "report": "reports/idle_5min_supplied.json",
+      "sha256": "a23c21569593f40766879df3e9c65c1aff2bf85e8983f070009bc25971b41247",
+      "mode": "idle",
+      "duration_seconds": 300,
+      "started_at": "2026-09-25T23:12:53.462Z",
+      "windows": 0,
+      "successful_calls": 0,
+      "consistency_checks_passed": true,
+      "total_wall_ms": 300053.30966699123,
+      "maximum_arrival_lag_ms": 17.150333046913147,
+      "deadline_misses": 0,
+      "session_released": false,
+      "window_ms": null,
+      "mean_inference_call_ms_weighted_by_candidates": null,
+      "maximum_output_difference_mmhg": null,
+      "channel_values_checked": 0,
+      "timing_values_checked": 0,
+      "overlap_pair_comparisons": 0,
+      "matched_interval_comparisons": 0,
+      "maximum_overlap_output_difference_mmhg": null
+    }
+  ],
+  "original_python_reference_bytes_available": false,
+  "full_report_overlaps_recomputed": true,
+  "replay_overlap_summaries_match_full_phase_pattern": true,
+  "unreported_replay_output_arrays_independently_recomputed": false,
+  "report_source_hashes_are_runtime_attestation": false,
+  "memory_or_energy_inferred_from_timing": false
+}
