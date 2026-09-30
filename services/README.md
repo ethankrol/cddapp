@@ -28,10 +28,9 @@ See [initial-services-integration.md](../docs/initial-services-integration.md) f
 the interfaces, setup points, boundaries, and test commands for the inference, AWS
 sync, and BLE services.
 
-## Scaffold validation
+## Validation
 
-`npm test` passes the 12 deliverable 1 tests using Node 22's built-in test runner.
-An attempt to install the locked dependencies for lint/typechecking failed because the
-disk had insufficient free space (`ENOSPC`); the incomplete `node_modules` was removed.
-`npm run lint` and `npm run typecheck` are therefore not claimed as passing. Install
-locked dependencies after freeing disk space, then run both checks.
+After dependencies were installed, `npm test` passed all 18 packet, inference, AWS
+sync, and BLE service tests. `npm run typecheck` and `npm run lint` also passed.
+An earlier dependency installation attempt failed with `ENOSPC`; this was resolved
+after disk space was freed. These are the current validation results.
