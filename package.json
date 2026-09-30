@@ -8,7 +8,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --experimental-default-type=module --test tests/measurement/*.test.ts tests/services/*.test.ts"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",

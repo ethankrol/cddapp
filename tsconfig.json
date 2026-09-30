@@ -3,6 +3,8 @@
   "compilerOptions": {
     "jsx": "react-native",
     "strict": true,
+    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": true,
     "paths": {
       "@/*": [
         "./*"
