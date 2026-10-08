@@ -204,6 +204,8 @@ PODS:
     - Yoga
   - ExpoAsset (12.0.13):
     - ExpoModulesCore
+  - ExpoDocumentPicker (14.0.8):
+    - ExpoModulesCore
   - ExpoFileSystem (19.0.24):
     - ExpoModulesCore
   - ExpoFont (14.0.11):
@@ -2285,7 +2287,8 @@ DEPENDENCIES:
   - expo-dev-menu (from `../node_modules/expo-dev-menu`)
   - expo-dev-menu-interface (from `../node_modules/expo-dev-menu-interface/ios`)
   - ExpoAsset (from `../node_modules/expo-asset/ios`)
-  - ExpoFileSystem (from `../node_modules/expo/node_modules/expo-file-system/ios`)
+  - ExpoDocumentPicker (from `../node_modules/expo-document-picker/ios`)
+  - ExpoFileSystem (from `../node_modules/expo-file-system/ios`)
   - ExpoFont (from `../node_modules/expo-font/ios`)
   - ExpoHaptics (from `../node_modules/expo-haptics/ios`)
   - ExpoHead (from `../node_modules/expo-router/ios`)
@@ -2407,8 +2410,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-dev-menu-interface/ios"
   ExpoAsset:
     :path: "../node_modules/expo-asset/ios"
+  ExpoDocumentPicker:
+    :path: "../node_modules/expo-document-picker/ios"
   ExpoFileSystem:
-    :path: "../node_modules/expo/node_modules/expo-file-system/ios"
+    :path: "../node_modules/expo-file-system/ios"
   ExpoFont:
     :path: "../node_modules/expo-font/ios"
   ExpoHaptics:
@@ -2596,6 +2601,7 @@ SPEC CHECKSUMS:
   expo-dev-menu: ffb77acaa6a91d260780ab72a7d236ece882c787
   expo-dev-menu-interface: 600df12ea01efecdd822daaf13cc0ac091775533
   ExpoAsset: 9e5a7c9c0a9fb83ad5b2bb365141f2bd7f289b66
+  ExpoDocumentPicker: 7cd9e71a0f66fb19eb0a586d6f26eee1284692e0
   ExpoFileSystem: 8e87545aef1d8d31f244edbfdd0780df4e5bac2e
   ExpoFont: f543ce20a228dd702813668b1a07b46f51878d47
   ExpoHaptics: d3a6375d8dcc3a1083d003bc2298ff654fafb536

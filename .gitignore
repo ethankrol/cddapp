@@ -88,3 +88,9 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# Private sensor recordings and local capture output
+/private-recordings/
+/datalogs/
+/CDD_DataCollection/
+/data_collection/datalogs/

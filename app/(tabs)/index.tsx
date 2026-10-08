@@ -1,6 +1,7 @@
 import BpSmokeTestLink from '@/components/BpSmokeTestLink';
+import BpCsvCard from '@/components/BpCsvCard';
 import { Ionicons } from '@expo/vector-icons';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 function Header() {
   return (
@@ -18,7 +19,10 @@ export default function HomePage() {
   return (
     <View style={styles.container}>
       <Header />
-      <BpSmokeTestLink />
+      <ScrollView contentContainerStyle={{paddingBottom:28}}>
+        <BpCsvCard />
+        <BpSmokeTestLink />
+      </ScrollView>
     </View>
   );
 }

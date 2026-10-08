@@ -1,0 +1,20 @@
+{
+  "complete": true,
+  "passed": true,
+  "syntheticWindowsChecked": 24,
+  "maxOutputDifferenceMmhg": [
+    5.006810036434217e-05,
+    3.649491709722952e-05
+  ],
+  "toleranceMmhg": 0.01,
+  "modelSha256": "1cccde2235544b4b055dc2dd73e481cde9d0492ea7796b2b468e03b7f0472ebe",
+  "headSha256": "b59763d96edc7191bd3af90f6d3cff7649da8205fab4bba243b2ef72215e6c40",
+  "python": "3.12.14",
+  "torch": "2.8.0+cpu",
+  "numpy": "2.3.5",
+  "onnx": "1.17.0",
+  "onnxruntime": "1.19.2",
+  "physicalIphoneRun": false,
+  "trainingRun": false,
+  "scope": "Host CPU export parity only."
+}

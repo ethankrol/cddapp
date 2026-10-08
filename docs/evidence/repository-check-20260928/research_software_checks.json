@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-29T15:03:23.665002+00:00",
+  "scope": "Local synthetic functional and CLI integration checks; no patient data or Slurm submission. Actual CPU CNN/LightGBM fits and pinned AnyPPG encoder used.",
+  "tests_run": 34,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "torch": "2.8.0+cpu",
+    "lightgbm": "4.6.0"
+  },
+  "source_sha256": {
+    "tools/research/recording_comparison/ANYPPG.md": "44651e5697da927340ccb8f4316f1d0594ad48e808437a1ebb8f9520cde39617",
+    "tools/research/recording_comparison/README.md": "664f5899b65ee3f5015032f90067839f99308755cfc3bcacb33a532e195f8de7",
+    "tools/research/recording_comparison/anyppg_probe.py": "188d6353b06f4aa2bcf21303f5a5aebc10c0c94420678f7138919aa446d34d2a",
+    "tools/research/recording_comparison/experiment.py": "4f76514347138adfca62b68c6d1b208392ece2dafd85daec8fb2e175f949efda",
+    "tools/research/recording_comparison/features.py": "b239dba0497ca4619fd94e20c809eab5f1a023c4a03a38b9f663a3eee4741dfd",
+    "tools/research/recording_comparison/prepare.py": "f5cc1da0e358a74fd1a822af80df8603650b5f817ccec69a2b1b07b57cf170e0",
+    "tools/research/recording_comparison/tests/test_anyppg.py": "488b9e048e8509975eb8c66c8fff23ccf1413a02b7e1eafbf98c88a673980a77",
+    "tools/research/recording_comparison/tests/test_pipeline.py": "2813b4dd50fb636c6c359ce383a1dd0114bfcb44d8ca4ae845eac4e231bba357",
+    "tools/research/recording_comparison/tests/test_prepare.py": "917c65d6f962ff064c237d63c59cbf1981d937db2b7dfb4b98dd1f93b8f96412",
+    "tools/research/recording_comparison/tests/test_scheduler.py": "64b4d04cee3baa3b8c785151858bfb4b25dd2e0befba0e2cd6958bfd2d03cb96",
+    "tools/research/recording_comparison/tests/test_train.py": "0896182a70994b81a989824452362aa155f81f075fcadfdf3afd1672dea90f94",
+    "tools/research/recording_comparison/train.py": "cfacec2dbef239336dbf5744f77304a6eaa96e02a940e0e31d0d12cd970a516f"
+  },
+  "gpu_run": false,
+  "physical_iphone_run": false,
+  "patient_bp_accuracy_evaluated": false
+}

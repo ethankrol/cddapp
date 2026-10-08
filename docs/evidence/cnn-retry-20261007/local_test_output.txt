@@ -1,0 +1,63 @@
+test_bins_forward_and_backward_match_native_float64 (test_pooling.PoolingCorrection.test_bins_forward_and_backward_match_native_float64) ... ok
+test_full_model_cpu_strict_backward_repeat_and_reload (test_pooling.PoolingCorrection.test_full_model_cpu_strict_backward_repeat_and_reload) ... ok
+test_gpu_preflight_never_silently_falls_back_to_cpu (test_pooling.PoolingCorrection.test_gpu_preflight_never_silently_falls_back_to_cpu) ... Traceback (most recent call last):
+  File "/workspace/scratch/c17d174f8e25/cdd-cnn-retry-handoff/cdd-cnn-retry/pooling_preflight.py", line 47, in run_preflight
+    train.require(device != "cuda" or torch.cuda.is_available(), "CUDA required for GPU preflight; no CPU fallback.")
+  File "/workspace/scratch/c17d174f8e25/cdd-cnn-retry-handoff/cdd-cnn-retry/train.py", line 40, in require
+    raise ValueError(message)
+ValueError: CUDA required for GPU preflight; no CPU fallback.
+ok
+test_overlapping_bins_are_preserved (test_pooling.PoolingCorrection.test_overlapping_bins_are_preserved) ... ok
+test_same_weight_initialization_keys_and_full_model_forward (test_pooling.PoolingCorrection.test_same_weight_initialization_keys_and_full_model_forward) ... ok
+test_combined_complete_checks_pairing_and_retains_both_source_versions (test_retry.RetryTests.test_combined_complete_checks_pairing_and_retains_both_source_versions) ... ok
+test_gpu_gate_calls_real_interface_with_cuda_and_batch64 (test_retry.RetryTests.test_gpu_gate_calls_real_interface_with_cuda_and_batch64) ... ok
+test_gpu_gate_hashes_arrays_before_cuda_and_records_failure (test_retry.RetryTests.test_gpu_gate_hashes_arrays_before_cuda_and_records_failure) ... Traceback (most recent call last):
+  File "/workspace/scratch/c17d174f8e25/cdd-cnn-retry-handoff/cdd-cnn-retry/retry_cnn.py", line 222, in preflight
+    require(sha256(path) == desc['sha256'], 'Prepared array changed: ' + name)
+  File "/workspace/scratch/c17d174f8e25/cdd-cnn-retry-handoff/cdd-cnn-retry/experiment.py", line 36, in require
+    raise ValueError(message)
+ValueError: Prepared array changed: X_raw_train.npy
+ok
+test_partial_submission_preserves_receipts (test_retry.RetryTests.test_partial_submission_preserves_receipts) ... ok
+test_preview_writes_nothing (test_retry.RetryTests.test_preview_writes_nothing) ... ok
+test_refuses_other_failure_or_already_trained (test_retry.RetryTests.test_refuses_other_failure_or_already_trained) ... ok
+test_submits_only_gpu_gate_cnn_array_and_summary (test_retry.RetryTests.test_submits_only_gpu_gate_cnn_array_and_summary) ... ok
+test_summary_preserves_13_sources_12_failures_and_no_partial_means (test_retry.RetryTests.test_summary_preserves_13_sources_12_failures_and_no_partial_means) ... ok
+test_tampering_with_success_report_is_rejected (test_retry.RetryTests.test_tampering_with_success_report_is_rejected) ... ok
+test_worker_reads_parent_and_never_allows_cpu (test_retry.RetryTests.test_worker_reads_parent_and_never_allows_cpu) ... ok
+test_worker_refuses_failed_or_mismatched_gate (test_retry.RetryTests.test_worker_refuses_failed_or_mismatched_gate) ... ok
+test_budget_exhaustion_remains_incomplete (test_train.TrainingContracts.test_budget_exhaustion_remains_incomplete) ... Traceback (most recent call last):
+  File "/workspace/scratch/c17d174f8e25/cdd-cnn-retry-handoff/cdd-cnn-retry/train.py", line 457, in run
+    check_budget(deadline)
+  File "/workspace/scratch/c17d174f8e25/cdd-cnn-retry-handoff/cdd-cnn-retry/train.py", line 64, in check_budget
+    raise BudgetExceeded("Declared worker wall-time budget reached.")
+recording_train_under_test.BudgetExceeded: Declared worker wall-time budget reached.
+ok
+test_cnn_backward_and_serialized_predictions (test_train.TrainingContracts.test_cnn_backward_and_serialized_predictions) ... epoch   1: val SBP=3.7554 DBP=1.4971; best=1
+epoch   2: val SBP=3.7000 DBP=1.4732; best=2
+ok
+test_cpu_real_data_refused_and_existing_output_preserved (test_train.TrainingContracts.test_cpu_real_data_refused_and_existing_output_preserved) ... Traceback (most recent call last):
+  File "/workspace/scratch/c17d174f8e25/cdd-cnn-retry-handoff/cdd-cnn-retry/train.py", line 442, in run
+    require(not args.allow_cpu or report["synthetic"], "--allow-cpu is restricted to a synthetic preparation manifest.")
+  File "/workspace/scratch/c17d174f8e25/cdd-cnn-retry-handoff/cdd-cnn-retry/train.py", line 40, in require
+    raise ValueError(message)
+ValueError: --allow-cpu is restricted to a synthetic preparation manifest.
+ok
+test_hash_tampering_rejected (test_train.TrainingContracts.test_hash_tampering_rejected) ... ok
+test_input_change_after_training_prevents_complete_report (test_train.TrainingContracts.test_input_change_after_training_prevents_complete_report) ... Traceback (most recent call last):
+  File "/workspace/scratch/c17d174f8e25/cdd-cnn-retry-handoff/cdd-cnn-retry/train.py", line 474, in run
+    verify_inputs_unchanged(args.data_dir, fingerprints)
+  File "/workspace/scratch/c17d174f8e25/cdd-cnn-retry-handoff/cdd-cnn-retry/train.py", line 141, in verify_inputs_unchanged
+    require(sha256(root / name) == digest, f"Input array changed during the worker run: {name}")
+  File "/workspace/scratch/c17d174f8e25/cdd-cnn-retry-handoff/cdd-cnn-retry/train.py", line 40, in require
+    raise ValueError(message)
+ValueError: Input array changed during the worker run: y_val.npy
+ok
+test_lightgbm_native_nan_training_and_reopen (test_train.TrainingContracts.test_lightgbm_native_nan_training_and_reopen) ... ok
+test_real_subject_overlap_rejected_even_with_updated_hashes (test_train.TrainingContracts.test_real_subject_overlap_rejected_even_with_updated_hashes) ... ok
+test_train_only_normalization_and_patient_macro (test_train.TrainingContracts.test_train_only_normalization_and_patient_macro) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 2.580s
+
+OK

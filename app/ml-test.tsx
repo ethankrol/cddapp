@@ -39,6 +39,11 @@ export default function MlTestScreen() {
     <>
       <Stack.Screen options={{ title: 'ML Model Test', headerShown: true }} />
       <ScrollView contentContainerStyle={styles.content}>
+        <Link href={"/ml-recording" as Href} asChild>
+          <Pressable accessibilityRole="button" disabled={busy} style={styles.button}>
+            <Text style={styles.buttonText}>Inspect a sensor recording</Text>
+          </Pressable>
+        </Link>
         {/* CDD_EXPANDED_PPG_LINK_V1 */}
         <BpExpandedLink />
         {/* CDD_PPG_CHAIN_LINK_V1 */}

@@ -1,0 +1,17 @@
+{
+  "complete": true,
+  "passed": true,
+  "physicalIphoneRun": false,
+  "bpAccuracyEvaluated": false,
+  "trainingRun": false,
+  "method": "JS CSV interpolation/normalization -> host ORT CPU -> JS saved BP head vs Python frozen pipeline",
+  "graphOptimizationLevel": "disabled",
+  "maxNormalizedDifference": 0,
+  "maxOutputDifferenceMmhg": [
+    2.2005808745007016e-05,
+    3.964709647164e-05
+  ],
+  "toleranceMmhg": 0.01,
+  "windowsChecked": 4,
+  "source": "User-supplied legacy AC recording; data kept private"
+}

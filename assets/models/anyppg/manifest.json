@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "modelId": "anyppg_frozen_ridge_raw_v1",
+  "modelSha256": "1cccde2235544b4b055dc2dd73e481cde9d0492ea7796b2b468e03b7f0472ebe",
+  "headSha256": "b59763d96edc7191bd3af90f6d3cff7649da8205fab4bba243b2ef72215e6c40",
+  "sourceHashes": {
+    "training_report.json": "c359cd7ab31bcd64438801d1f629920ef6c33f610b6661ab2ba0b3363c18af99",
+    "resnet1d.py": "2a6e1761c057820601c3085a493ee23fa0b2f3aef7c4d9812d54558d6ffe73c2",
+    "anyppg_ckpt.pth": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa",
+    "ridge_probe.npz": "8856f560c9d2ecb1b73dfcf504c313871ed5438347e558f3090dff7160f9d608"
+  },
+  "syntheticFixtureSha256": "a989d5ceb23fdd717e6c2f041959e1c42261596ec15ccea938e3352d27447830",
+  "inputName": "chunks",
+  "inputShape": [
+    3,
+    1,
+    1250
+  ],
+  "inputDtype": "float32",
+  "outputName": "features",
+  "outputShape": [
+    3,
+    512
+  ],
+  "requiredGraphOptimizationLevel": "disabled",
+  "samplingRateHz": 125,
+  "recordingSamples": 3750,
+  "chunkSamples": 1250,
+  "preprocessing": "Per-chunk float64 population z-score with std+1e-8; then float32. No extra filter.",
+  "head": "Float32 mean of 3 embeddings; saved feature standardization and ridge arithmetic in float64/JS Number.",
+  "outputOrder": [
+    "SBP",
+    "DBP"
+  ],
+  "outputUnits": "mmHg",
+  "calibrationApplied": false,
+  "onnxBytes": 16436446,
+  "sourceRepository": "https://github.com/PKUDigitalHealth/AnyPPG",
+  "sourceCommit": "661b877aa96eac3bba320a462cb2a3bfea991103",
+  "physicalIphoneValidated": false,
+  "bpAccuracyValidated": false,
+  "pretrainingOverlap": "AnyPPG pretraining includes PulseDB/MIMIC-III. Patient overlap with this MIMIC-derived cohort is unresolved. Results are exploratory development metrics, not certified performance on patients unseen during pretraining."
+}

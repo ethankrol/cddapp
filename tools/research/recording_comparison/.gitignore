@@ -1,0 +1,8 @@
+# Research outputs belong in a separate experiment directory, not Git.
+/data/
+/runs/
+/encoder/
+/deps/
+/logs/
+__pycache__/
+*.py[cod]

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "scope": "Actual host CPU ONNX inference from repository JS preprocessing; not an iPhone run.",
+  "passed": true,
+  "synthetic": true,
+  "calls": 189,
+  "windows": [
+    {
+      "offset_samples": 0,
+      "candidates": 31,
+      "max_output_difference_mmhg": [
+        7.62939453125e-06,
+        3.814697265625e-06
+      ],
+      "max_raw_difference": 0,
+      "max_timing_difference": 0,
+      "max_normalized_difference": 0
+    },
+    {
+      "offset_samples": 625,
+      "candidates": 32,
+      "max_output_difference_mmhg": [
+        7.62939453125e-06,
+        3.814697265625e-06
+      ],
+      "max_raw_difference": 0,
+      "max_timing_difference": 0,
+      "max_normalized_difference": 0
+    },
+    {
+      "offset_samples": 1250,
+      "candidates": 31,
+      "max_output_difference_mmhg": [
+        7.62939453125e-06,
+        3.814697265625e-06
+      ],
+      "max_raw_difference": 0,
+      "max_timing_difference": 0,
+      "max_normalized_difference": 0
+    },
+    {
+      "offset_samples": 1875,
+      "candidates": 32,
+      "max_output_difference_mmhg": [
+        7.62939453125e-06,
+        3.814697265625e-06
+      ],
+      "max_raw_difference": 0,
+      "max_timing_difference": 0,
+      "max_normalized_difference": 0
+    },
+    {
+      "offset_samples": 2500,
+      "candidates": 31,
+      "max_output_difference_mmhg": [
+        7.62939453125e-06,
+        3.814697265625e-06
+      ],
+      "max_raw_difference": 0,
+      "max_timing_difference": 0,
+      "max_normalized_difference": 0
+    },
+    {
+      "offset_samples": 3125,
+      "candidates": 32,
+      "max_output_difference_mmhg": [
+        7.62939453125e-06,
+        3.814697265625e-06
+      ],
+      "max_raw_difference": 0,
+      "max_timing_difference": 0,
+      "max_normalized_difference": 0
+    }
+  ],
+  "max_output_difference_mmhg": [
+    7.62939453125e-06,
+    3.814697265625e-06
+  ],
+  "tolerance_mmhg": 0.01,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "onnxruntime": "1.19.2",
+  "platform": "Linux",
+  "execution_provider": "CPUExecutionProvider",
+  "threads": 1,
+  "asset_sha256": {
+    "python code/cBP-Tnet_Model.pth": "2cabfe0c64bf2463495d9581dea837638c41c149948abd9730b8b6be25fd0169",
+    "assets/models/onnx_export/cbp_tnet.onnx": "a8e26e25b852344814e4a474e73e92b9f8d40845c20948fdcce828c9e4f12fce",
+    "assets/models/onnx_export/normalization.json": "bc8a28b7ca84faa00644fa7d13ae706705ecd47b9543296753273555be3aba41",
+    "assets/ppg-expanded/full_ppg_reference_v1.json": "88e4ad195fe39cfdaebfa8f7c2cb7b76d0d29b9fd3fa63f61c7d3eae81d0117e"
+  },
+  "source_sha256": {
+    "services/bpExpandedCore.js": "dab3794a7bbb83c9218d5266c4981b5c237ee6ffa1ee6a5f1ded594974daacb8",
+    "services/bpPpgPreprocess.js": "65210ab9067f7ed5b2b9c1e350b5b8dd538c3a7a078bf76b34d7d79ce10aa382",
+    "tools/tests/verify_bp_package.py": "f0a103324eb594f5d8a64c0f6274638472445b111271ea1f9c63c168ba639489"
+  },
+  "physical_device_run": false,
+  "bp_accuracy_evaluated": false,
+  "memory_measured": false,
+  "energy_measured": false
+}

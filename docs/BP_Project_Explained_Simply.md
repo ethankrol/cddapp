@@ -1,6 +1,12 @@
 # Your blood-pressure app, explained simply
 
-Updated September 25, 2026. This guide explains the results you supplied. The detailed engineering report contains the full measurements and research history.
+Original test walkthrough: September 25, 2026. Current-data update: October 7, 2026. This guide explains the results you supplied. The detailed engineering report contains the full measurements and research history.
+
+## Latest update: actual hardware data
+
+We have now inspected the first uploaded red/infrared CSV and collection code. The 1,322 logged pairs span 48.723 seconds, with uneven print timing. Their true acquisition rate is not established. The new recording screen inspects that CSV, and a diagnostic firmware/logger update preserves original counts and removes a discarded read. See [the actual-data guide](Actual_Sensor_Data_Review_and_Next_Steps.md) before trying the file in a model.
+
+The four-beat test described below is a historical first test. Later synthetic full/rolling-window reports are summarized in [Expanded iPhone Test Results](Expanded_iPhone_Test_Results.md). Those broader software checks still do not establish live sensor compatibility.
 
 ## 1. What have we actually built?
 
@@ -21,7 +27,7 @@ PPG is the pulse-shaped signal obtained by shining light into tissue and measuri
 
 Our current preprocessing expects **125 numbers per second**. Therefore a 30-second recording contains **3,750 numbers**. These are signal samples, not 3,750 blood-pressure readings.
 
-Your SFH 7050A provides LEDs and a light detector. Additional electronics must turn the detector signal into digital samples. Your ADXL366 measures motion; a future quality-checking system could use it to flag movement. We still need the analog readout and Bluetooth microcontroller details.
+The previously proposed SFH 7050A provides LEDs and a light detector. Additional electronics must turn the detector signal into digital samples. Your ADXL366 measures motion; a future quality-checking system could use it to flag movement. We still need the final hardware/readout details. The newly supplied collection sketch uses a different SparkFun/MAXIM sensor-hub library; confirm which board produced the file.
 
 ## 3. If PPG keeps arriving, how can the model fit on a phone?
 
@@ -121,7 +127,7 @@ Combining several beats from one recording is another average. Many beats attach
 
 ## 9. What would monthly calibration look like in the app?
 
-This is the documented design; the complete user interface and storage are still pending.
+This is the documented design. The October 7 update adds a local unmatched cuff log and profile-storage adapter; automatic pairing, activation, reminders and a complete user workflow remain pending.
 
 1. The user starts a calibration session for the correct account and sensor.
 2. The app collects pulse recordings and paired reference cuff readings under a specified measurement protocol.
@@ -134,7 +140,7 @@ A rolling **30-day reminder/expiry** is a proposed product rule. We have not sho
 
 The proposed storage is local to the app so it can work offline, with appropriate account separation and protection. Optional cloud synchronization is a separate feature. Missing, expired, incompatible or invalid calibration should return an explicit unavailable/calibration-required status. It should not silently reuse another user's profile or present an old cuff value as a new measurement.
 
-The small calculation library has been implemented and tested. The calibration screen, persistence, reminders and full phone workflow remain future work. Questions still open include the cuff/PPG pairing procedure, quality rules, acceptable reference disagreement and how long corrections remain useful.
+The small calculation library has been implemented and tested. The new research cuff-log screen and local storage are implemented but need a physical-device check. Calibration acceptance/activation, reminders and the full prediction workflow remain future work. Questions still open include the cuff/PPG pairing procedure, quality rules, acceptable reference disagreement and how long corrections remain useful.
 
 ## 10. Is my `.pth` the right model?
 
@@ -165,7 +171,7 @@ These hashes should differ because `.pth` and `.onnx` are different files. The e
 
 ## 11. Did we test better or state-of-the-art models?
 
-“State of the art,” usually abbreviated **SOTA**, means leading published methods under a specified task and evaluation setup. We have **not** run a benchmark of external published SOTA models in this project. We did run several controlled development experiments on HiPerGator, including augmentation on/off, keeping/masking a timing input, and a smaller CNN versus cBP-Tnet.
+“State of the art,” usually abbreviated **SOTA**, means leading published methods under a specified task and evaluation setup. The later development benchmark evaluated CNN, cBP-Tnet, xResNet1D50 and Inception1D across three seeds. A separate recording-level comparison evaluated CNN/filter combinations, LightGBM and an exploratory AnyPPG result. These are comparisons under our development protocols, not proof of reproducing every published claim or establishing state-of-the-art accuracy. We did run several controlled development experiments on HiPerGator, including augmentation on/off, keeping/masking a timing input, and a smaller CNN versus cBP-Tnet.
 
 For the matched comparison, both architectures were trained using the same new recipe and three declared random seeds. A seed controls random initialization and sampling; repeats help show how much results vary between runs.
 
