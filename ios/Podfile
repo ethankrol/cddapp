@@ -12,11 +12,14 @@ def ccache_enabled?(podfile_properties)
   podfile_properties['apple.ccacheEnabled'] == 'true'
 end
 
-ENV['RCT_NEW_ARCH_ENABLED'] ||= '0' if podfile_properties['newArchEnabled'] == 'false'
 ENV['EX_DEV_CLIENT_NETWORK_INSPECTOR'] ||= podfile_properties['EX_DEV_CLIENT_NETWORK_INSPECTOR']
-ENV['RCT_USE_RN_DEP'] ||= '1' if podfile_properties['ios.buildReactNativeFromSource'] != 'true' && podfile_properties['newArchEnabled'] != 'false'
-ENV['RCT_USE_PREBUILT_RNCORE'] ||= '1' if podfile_properties['ios.buildReactNativeFromSource'] != 'true' && podfile_properties['newArchEnabled'] != 'false'
-platform :ios, podfile_properties['ios.deploymentTarget'] || '15.1'
+ENV['RCT_USE_RN_DEP'] ||= podfile_properties['ios.buildReactNativeFromSource'] == 'true' ? '0' : '1'
+ENV['RCT_USE_PREBUILT_RNCORE'] ||= podfile_properties['ios.buildReactNativeFromSource'] == 'true' ? '0' : '1'
+ENV['RCT_HERMES_V1_ENABLED'] ||= '0' if podfile_properties['expo.useHermesV1'] == 'false'
+# SDK 57: an explicit disable takes precedence over the environment default.
+ENV['EXPO_USE_PRECOMPILED_MODULES'] = '0' if podfile_properties['EXPO_USE_PRECOMPILED_MODULES'] == 'false'
+ENV['EXPO_USE_PRECOMPILED_MODULES'] ||= '1'
+platform :ios, podfile_properties['ios.deploymentTarget'] || '16.4'
 
 prepare_react_native_project!
 
@@ -56,13 +59,13 @@ target 'cddapp' do
   )
 
   post_install do |installer|
-    # CDD_MINIMUM_IOS_15_1
+    # CDD_MINIMUM_IOS_16_4
     installer.pods_project.targets.each do |pod_target|
       pod_target.build_configurations.each do |build_config|
         current = build_config.build_settings['IPHONEOS_DEPLOYMENT_TARGET']
         next if current && !current.to_s.match?(/\A\d+(\.\d+)*\z/)
-        if Gem::Version.new(current || '0') < Gem::Version.new('15.1')
-          build_config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.1'
+        if Gem::Version.new(current || '0') < Gem::Version.new('16.4')
+          build_config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.4'
         end
       end
     end
