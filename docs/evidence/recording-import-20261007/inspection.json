@@ -1,0 +1,99 @@
+{
+  "inspection": {
+    "schemaVersion": 1,
+    "format": "legacy_ac",
+    "source": "recorded",
+    "sampleCount": 1322,
+    "elapsedSeconds": 48.723,
+    "observedLoggedPairsPerSecond": 27.11245202471112,
+    "declaredSensorRateHz": null,
+    "timestampsDescribe": "device_print_time_ms",
+    "nonIncreasingTimestamps": 0,
+    "intervalMs": {
+      "min": 9,
+      "median": 21,
+      "p95": 140,
+      "max": 345
+    },
+    "mostCommonIntervals": [
+      {
+        "ms": 21,
+        "count": 513
+      },
+      {
+        "ms": 9,
+        "count": 346
+      },
+      {
+        "ms": 81,
+        "count": 97
+      },
+      {
+        "ms": 39,
+        "count": 94
+      },
+      {
+        "ms": 15,
+        "count": 71
+      },
+      {
+        "ms": 27,
+        "count": 31
+      },
+      {
+        "ms": 135,
+        "count": 31
+      },
+      {
+        "ms": 141,
+        "count": 28
+      },
+      {
+        "ms": 147,
+        "count": 24
+      },
+      {
+        "ms": 129,
+        "count": 21
+      }
+    ],
+    "hostSequenceMissing": null,
+    "hostSequenceNonIncreasing": null,
+    "sensorSamplesLost": null,
+    "fifoMaximum": null,
+    "red": {
+      "min": -202763.41,
+      "max": 194370.78,
+      "mean": 4169.405907715552,
+      "std": 58433.7999168811,
+      "largestAdjacentChange": 130171.18
+    },
+    "infrared": {
+      "min": -226687.83,
+      "max": 217184.16,
+      "mean": 4641.901800302565,
+      "std": 65398.629573023514,
+      "largestAdjacentChange": 114412.01
+    },
+    "previewAllowed": false,
+    "modelInferenceRun": false,
+    "qualityValidated": false,
+    "bpAccuracyEvaluated": false,
+    "blockers": [
+      "Sensor sample rate and exact acquisition timestamps are not established by this CSV. Readout times are not a verified sample clock.",
+      "The supplied firmware subtracts a moving baseline. RawRed and RawIR are processed AC values, not original ADC counts.",
+      "The phone model expects one compatible PPG signal at evenly spaced 125 Hz. No resampling or sensor-domain validation has been performed.",
+      "This file contains no paired cuff readings, so BP error and personal calibration cannot be evaluated."
+    ],
+    "warnings": [
+      "Red and infrared are separate optical channels. The model\u2019s three channels are PPG plus its first and second derivatives.",
+      "Logged row counts and gaps cannot prove how many sensor samples were skipped before logging.",
+      "Missing metadata is kept unknown; it is not filled in from the filename."
+    ]
+  },
+  "preview": null,
+  "sourceFileSha256": "aa0630aab95416a6b0c8c6f25d31f6577b6d79d8bfdd7ab66f9793261dfe3878",
+  "reviewScope": "One uploaded CSV and its supplied collection source. Sensor sampling rate, library version and cuff reference are unknown.",
+  "sourceFirmwareSha256": "350e892196b40911fb61551d4b2c71bb3edf648ae93103588aa6e7d29bdbbdca",
+  "sourceLoggerSha256": "d05123b5c519d037812dc36905c8d2c4fa9008ab99b3e0a49fb05bf1e07f73a4"
+}

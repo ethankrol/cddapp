@@ -1,0 +1,16 @@
+{
+  "test": "cnn_retry_local_software_checks",
+  "synthetic": true,
+  "passed": true,
+  "test_count": 24,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "python": "3.12.14",
+  "torch": "2.8.0+cpu",
+  "cuda_available": false,
+  "gpu_tested": false,
+  "slurm_calls_mocked": true,
+  "elapsed_seconds": 3.315505860999906,
+  "scope": "CPU numeric/training checks and mocked controller integration; real CUDA gate pending HiPerGator."
+}

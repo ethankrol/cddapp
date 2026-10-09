@@ -1,0 +1,42 @@
+{
+  "reports": [
+    {
+      "original_attachment": "Pasted text (4).txt",
+      "report": "reports/full_189_calls.json",
+      "sha256": "cdf7b499f3cc1e002985fa90023d89d78a4cfb8832b10b5b0ab7688db3a7be0b",
+      "preserved_attachment_bytes": true,
+      "origin": "User-supplied phone report; not a device run performed by this analysis."
+    },
+    {
+      "original_attachment": "Pasted text (3).txt",
+      "report": "reports/blocks_5min_310_calls.json",
+      "sha256": "996f9d6d548105154b275a35913741dac544f038010616fd8dabb578dbeca8e9",
+      "preserved_attachment_bytes": true,
+      "origin": "User-supplied phone report; not a device run performed by this analysis."
+    },
+    {
+      "original_attachment": "Pasted text (2).txt",
+      "report": "reports/rolling_5min_1732_calls.json",
+      "sha256": "b1e3ad5a8d404caef3fb84ba2ffbe80127116f63a35aac3b3ab65d4ef76f80d4",
+      "preserved_attachment_bytes": true,
+      "origin": "User-supplied phone report; not a device run performed by this analysis."
+    },
+    {
+      "original_attachment": "Pasted text(20260927-175555).txt",
+      "report": "reports/blocks_20min_1240_calls.json",
+      "sha256": "5997fd00dc8ca5b60d4caea7f4c3eb939b827147f5a4b36410835634f7d3f316",
+      "preserved_attachment_bytes": true,
+      "origin": "User-supplied phone report; not a device run performed by this analysis."
+    },
+    {
+      "report": "reports/idle_5min_supplied.json",
+      "sha256": "a23c21569593f40766879df3e9c65c1aff2bf85e8983f070009bc25971b41247",
+      "preserved_attachment_bytes": false,
+      "origin": "Field-preserving transcription of user-inline JSON; shared provenance fields agree with attachments. No original attachment bytes for this idle report."
+    }
+  ],
+  "review_date": "2026-09-27",
+  "measurements_date": "2026-09-25",
+  "hardware_note": "Earlier evidence identifies iPhone16Pro; these five reports contain platform/OS, not hardware identifier or runtime attestation.",
+  "source_of_python_expected_outputs": "Bundled values in the full phone report; original full_ppg_reference_v1.json not attached for independent rerun."
+}

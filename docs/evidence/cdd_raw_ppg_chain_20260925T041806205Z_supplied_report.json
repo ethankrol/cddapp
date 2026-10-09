@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "test": "cdd_raw_ppg_chain",
+  "synthetic": true,
+  "startedAt": "2026-09-25T04:18:06.205Z",
+  "finishedAt": "2026-09-25T04:18:06.370Z",
+  "contract": "legacy_ppg_candidates_v1",
+  "inputStage": "raw_ppg",
+  "outputStage": "uncalibrated_model_outputs",
+  "rawSampleCount": 3750,
+  "samplingRateHz": 125,
+  "candidatesPlanned": 4,
+  "complete": true,
+  "passed": true,
+  "cancelled": false,
+  "failure": null,
+  "cleanupFailure": null,
+  "preprocessing": {
+    "passed": true,
+    "candidateCount": 31,
+    "expectedCandidateCount": 31,
+    "candidatesNumericallyChecked": 4,
+    "channelValuesChecked": 3000,
+    "timingValuesChecked": 8,
+    "intervalsMatch": true,
+    "maxWaveDifference": 0,
+    "maxTimingDifference": 0,
+    "peakCount": 33,
+    "selectedScaleIndex": 56,
+    "preprocessingMs": 45.91741597652435,
+    "exactMatch": true
+  },
+  "normalization": {
+    "passed": true,
+    "channelValuesChecked": 3000,
+    "timingValuesChecked": 8,
+    "maxBeatDifference": 0,
+    "maxTimingDifference": 0,
+    "exactMatch": true,
+    "absoluteTolerance": 1e-06,
+    "normalizationMs": 0.48762500286102295,
+    "timingMaskApplied": false,
+    "paddedValuesStandardized": true
+  },
+  "modelInferenceRun": true,
+  "attempted": 4,
+  "successful": 4,
+  "parityFailures": 0,
+  "runtimeFailures": 0,
+  "outputOrder": [
+    "SBP",
+    "DBP"
+  ],
+  "outputUnits": "mmHg",
+  "outputToleranceMmhg": 0.01,
+  "outputs": [
+    {
+      "candidate": 1,
+      "interval": [
+        135,
+        248
+      ],
+      "phone": [
+        111.3369140625,
+        54.604774475097656
+      ],
+      "reference": [
+        111.33690643310547,
+        54.60478591918945
+      ],
+      "differenceMmhg": [
+        7.62939453125e-06,
+        1.1444091796875e-05
+      ],
+      "passed": true
+    },
+    {
+      "candidate": 2,
+      "interval": [
+        248,
+        362
+      ],
+      "phone": [
+        111.408447265625,
+        54.647926330566406
+      ],
+      "reference": [
+        111.40845489501953,
+        54.647926330566406
+      ],
+      "differenceMmhg": [
+        7.62939453125e-06,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "candidate": 3,
+      "interval": [
+        362,
+        476
+      ],
+      "phone": [
+        111.5260009765625,
+        54.7270393371582
+      ],
+      "reference": [
+        111.52600860595703,
+        54.72703552246094
+      ],
+      "differenceMmhg": [
+        7.62939453125e-06,
+        3.814697265625e-06
+      ],
+      "passed": true
+    },
+    {
+      "candidate": 4,
+      "interval": [
+        476,
+        589
+      ],
+      "phone": [
+        111.51296997070312,
+        54.74232482910156
+      ],
+      "reference": [
+        111.51296997070312,
+        54.7423210144043
+      ],
+      "differenceMmhg": [
+        0,
+        3.814697265625e-06
+      ],
+      "passed": true
+    }
+  ],
+  "maxDifferenceMmhg": {
+    "SBP": 7.62939453125e-06,
+    "DBP": 1.1444091796875e-05
+  },
+  "inferenceMs": [
+    3.5380420684814453,
+    2.834249973297119,
+    2.8084579706192017,
+    2.730666995048523
+  ],
+  "adapterTimings": {
+    "importMs": 3.0047080516815186,
+    "assetResolveMs": 0.8238749504089355,
+    "sessionCreateMs": 99.76724994182587
+  },
+  "releaseMs": 0.5095840692520142,
+  "sessionReleased": true,
+  "normalizationApplied": true,
+  "calibrationApplied": false,
+  "aggregationApplied": false,
+  "qualityValidated": false,
+  "bpAccuracyEvaluated": false,
+  "memoryMeasured": false,
+  "energyMeasured": false,
+  "appColdLaunchMeasured": false,
+  "osCacheState": "uncontrolled",
+  "freshSession": true,
+  "referenceMethod": "Python preprocessing + NumPy normalization + Python ONNX Runtime CPU",
+  "sourceDigestVerification": "Installer verified asset/source hashes; bundled identifiers are not runtime attestation.",
+  "totalWallMs": 165.69958293437958,
+  "provenance": {
+    "schemaVersion": 1,
+    "test": "cdd_raw_ppg_chain",
+    "synthetic": true,
+    "referenceSha256": "38ddaf0b51ee94b4c669993bd786c20694cf7a988e162784341b67cfa35305a5",
+    "referenceControllerSha256": "acf24afc8fd473fae1d7437e1754a1b75664e8808017875549a794bda26d7f84",
+    "referenceCreatedAt": "2026-09-25T03:37:32.834432+00:00",
+    "sourceHashes": {
+      "model": "a8e26e25b852344814e4a474e73e92b9f8d40845c20948fdcce828c9e4f12fce",
+      "normalization": "bc8a28b7ca84faa00644fa7d13ae706705ecd47b9543296753273555be3aba41",
+      "export_report": "f2c752c064aa511b74013205b36e78e9f1decb24da2a032d001d2732ad10f82e",
+      "smoke_fixture": "10ddfcddb8a5aaf2fe5098b5565ef018a6872580ade2d1eb7f839d1d920631a8",
+      "ppg_fixture": "db0eae6bdc76c8ce73a3c03e9476356f9eb9e9db25ee39a0bc6836c7a89461f0"
+    },
+    "preprocessingJsSha256": "65210ab9067f7ed5b2b9c1e350b5b8dd538c3a7a078bf76b34d7d79ce10aa382",
+    "chainCoreSha256": "4a01d30ba835d206c9ff1cf043c5b042a09163708328f403e2731f6814a924a9",
+    "runtimeAdapterSha256": "fd5b66e1bc0ae9ac7ba0e90a7588408efbc5bfd44371c3630e8d29e0893dd765",
+    "nativeWrapperSha256": "a28f2bd824ab45dc7a56102179e3b53bc5d6928cf808f8648a3ff1eb6b58b98c",
+    "requiredOnnxRuntimeVersion": "1.24.3",
+    "scope": "Synthetic raw PPG -> unnormalized features -> saved normalization -> original model; first four candidates only. No BP accuracy claim."
+  },
+  "modelSha256": "a8e26e25b852344814e4a474e73e92b9f8d40845c20948fdcce828c9e4f12fce",
+  "referenceSha256": "38ddaf0b51ee94b4c669993bd786c20694cf7a988e162784341b67cfa35305a5",
+  "onnxRuntimeVersion": "1.24.3",
+  "referenceOnnxRuntimeVersion": "1.19.2",
+  "executionProvider": "cpu",
+  "threads": 1,
+  "platform": "ios",
+  "osVersion": "26.6.2",
+  "developmentBuild": false,
+  "jsEngine": "Hermes"
+}

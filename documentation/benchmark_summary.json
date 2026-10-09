@@ -1,0 +1,305 @@
+{
+  "schema_version": 1,
+  "scope": "Train/validation development comparison on frozen legacy 3x250 beat caches; published backbones adapted, not paper reproduction. No test data, calibration, export, or phone update. Historical cache identity reconstructed, not certified.",
+  "predeclared_seeds": [
+    125,
+    126,
+    127
+  ],
+  "predeclared_arms": [
+    "cnn_only",
+    "cbp_tnet",
+    "xresnet1d50",
+    "inception1d"
+  ],
+  "complete": true,
+  "preflight_complete": true,
+  "preflight_error": null,
+  "comparison_valid": true,
+  "comparison_contract_errors": [],
+  "runs": [
+    {
+      "seed": 125,
+      "arm": "cnn_only",
+      "status": "complete",
+      "SBP_MAE": 13.00770287430592,
+      "DBP_MAE": 8.65174880350553,
+      "SBP_r": 0.3054041015719665,
+      "DBP_r": 0.38776988832986264,
+      "parameters": 464962,
+      "best_epoch": 8,
+      "stop": "early_stopping",
+      "note": ""
+    },
+    {
+      "seed": 125,
+      "arm": "cbp_tnet",
+      "status": "complete",
+      "SBP_MAE": 13.007074759556698,
+      "DBP_MAE": 8.681108161877363,
+      "SBP_r": 0.29617719218966126,
+      "DBP_r": 0.37728635691396567,
+      "parameters": 5219394,
+      "best_epoch": 4,
+      "stop": "early_stopping",
+      "note": ""
+    },
+    {
+      "seed": 125,
+      "arm": "xresnet1d50",
+      "status": "complete",
+      "SBP_MAE": 12.996229418338874,
+      "DBP_MAE": 8.72249636777242,
+      "SBP_r": 0.2983332624656869,
+      "DBP_r": 0.36960362013214776,
+      "parameters": 970146,
+      "best_epoch": 4,
+      "stop": "early_stopping",
+      "note": ""
+    },
+    {
+      "seed": 125,
+      "arm": "inception1d",
+      "status": "complete",
+      "SBP_MAE": 13.00819775283031,
+      "DBP_MAE": 8.695423937430748,
+      "SBP_r": 0.2988955777934249,
+      "DBP_r": 0.387186735382087,
+      "parameters": 589826,
+      "best_epoch": 1,
+      "stop": "early_stopping",
+      "note": ""
+    },
+    {
+      "seed": 126,
+      "arm": "cnn_only",
+      "status": "complete",
+      "SBP_MAE": 13.093182130960317,
+      "DBP_MAE": 8.64083120243366,
+      "SBP_r": 0.2919537614969187,
+      "DBP_r": 0.3790137334093026,
+      "parameters": 464962,
+      "best_epoch": 27,
+      "stop": "early_stopping",
+      "note": ""
+    },
+    {
+      "seed": 126,
+      "arm": "cbp_tnet",
+      "status": "complete",
+      "SBP_MAE": 12.88437925475683,
+      "DBP_MAE": 8.73522586279649,
+      "SBP_r": 0.31574050076028043,
+      "DBP_r": 0.37901450775077183,
+      "parameters": 5219394,
+      "best_epoch": 3,
+      "stop": "early_stopping",
+      "note": ""
+    },
+    {
+      "seed": 126,
+      "arm": "xresnet1d50",
+      "status": "complete",
+      "SBP_MAE": 13.023867926670954,
+      "DBP_MAE": 8.768924700761453,
+      "SBP_r": 0.30413136424846404,
+      "DBP_r": 0.3824015438696082,
+      "parameters": 970146,
+      "best_epoch": 2,
+      "stop": "early_stopping",
+      "note": ""
+    },
+    {
+      "seed": 126,
+      "arm": "inception1d",
+      "status": "complete",
+      "SBP_MAE": 13.003607767447447,
+      "DBP_MAE": 8.757204103763288,
+      "SBP_r": 0.2951512732561942,
+      "DBP_r": 0.36789739635683744,
+      "parameters": 589826,
+      "best_epoch": 3,
+      "stop": "early_stopping",
+      "note": ""
+    },
+    {
+      "seed": 127,
+      "arm": "cnn_only",
+      "status": "complete",
+      "SBP_MAE": 13.029674695821909,
+      "DBP_MAE": 8.608387554511046,
+      "SBP_r": 0.2865565475438662,
+      "DBP_r": 0.37332499895633886,
+      "parameters": 464962,
+      "best_epoch": 12,
+      "stop": "early_stopping",
+      "note": ""
+    },
+    {
+      "seed": 127,
+      "arm": "cbp_tnet",
+      "status": "complete",
+      "SBP_MAE": 13.081763579246326,
+      "DBP_MAE": 8.639932722580738,
+      "SBP_r": 0.2915067633039503,
+      "DBP_r": 0.39094257714034003,
+      "parameters": 5219394,
+      "best_epoch": 2,
+      "stop": "early_stopping",
+      "note": ""
+    },
+    {
+      "seed": 127,
+      "arm": "xresnet1d50",
+      "status": "complete",
+      "SBP_MAE": 12.958612020150209,
+      "DBP_MAE": 8.707093712782248,
+      "SBP_r": 0.3051605945246761,
+      "DBP_r": 0.3757380990277928,
+      "parameters": 970146,
+      "best_epoch": 2,
+      "stop": "early_stopping",
+      "note": ""
+    },
+    {
+      "seed": 127,
+      "arm": "inception1d",
+      "status": "complete",
+      "SBP_MAE": 13.03013470625266,
+      "DBP_MAE": 8.696078022932396,
+      "SBP_r": 0.31011557844186755,
+      "DBP_r": 0.3920404964436066,
+      "parameters": 589826,
+      "best_epoch": 15,
+      "stop": "early_stopping",
+      "note": ""
+    }
+  ],
+  "three_seed_summary": {
+    "cnn_only": {
+      "completed_seed_count": 3,
+      "all_seeds_complete": true,
+      "cautions": [],
+      "validation": {
+        "SBP": {
+          "mean_MAE": 13.043519900362716,
+          "sample_SD_MAE": 0.0443896733050564
+        },
+        "DBP": {
+          "mean_MAE": 8.633655853483411,
+          "sample_SD_MAE": 0.02255357406285729
+        }
+      }
+    },
+    "cbp_tnet": {
+      "completed_seed_count": 3,
+      "all_seeds_complete": true,
+      "cautions": [],
+      "validation": {
+        "SBP": {
+          "mean_MAE": 12.991072531186617,
+          "sample_SD_MAE": 0.09966040524275335
+        },
+        "DBP": {
+          "mean_MAE": 8.685422249084864,
+          "sample_SD_MAE": 0.047792825344084564
+        }
+      }
+    },
+    "xresnet1d50": {
+      "completed_seed_count": 3,
+      "all_seeds_complete": true,
+      "cautions": [],
+      "validation": {
+        "SBP": {
+          "mean_MAE": 12.992903121720012,
+          "sample_SD_MAE": 0.032754870185341095
+        },
+        "DBP": {
+          "mean_MAE": 8.732838260438706,
+          "sample_SD_MAE": 0.03218670263574519
+        }
+      }
+    },
+    "inception1d": {
+      "completed_seed_count": 3,
+      "all_seeds_complete": true,
+      "cautions": [],
+      "validation": {
+        "SBP": {
+          "mean_MAE": 13.013980075510139,
+          "sample_SD_MAE": 0.014177308005194067
+        },
+        "DBP": {
+          "mean_MAE": 8.716235354708811,
+          "sample_SD_MAE": 0.03548148469663309
+        }
+      }
+    }
+  },
+  "baselines": {
+    "train": {
+      "train_mean": {
+        "SBP": {
+          "mae": 14.573760191223839,
+          "correlation": null,
+          "prediction_sd": 0.0,
+          "target_sd": 18.110563768141727
+        },
+        "DBP": {
+          "mae": 9.739282697460869,
+          "correlation": null,
+          "prediction_sd": 0.0,
+          "target_sd": 12.4370419446675
+        }
+      },
+      "train_median": {
+        "SBP": {
+          "mae": 14.530037033306469,
+          "correlation": null,
+          "prediction_sd": 0.0,
+          "target_sd": 18.110563768141727
+        },
+        "DBP": {
+          "mae": 9.672877207695354,
+          "correlation": null,
+          "prediction_sd": 0.0,
+          "target_sd": 12.4370419446675
+        }
+      }
+    },
+    "val": {
+      "train_mean": {
+        "SBP": {
+          "mae": 13.875898447379088,
+          "correlation": null,
+          "prediction_sd": 0.0,
+          "target_sd": 17.183559283243845
+        },
+        "DBP": {
+          "mae": 9.663956961558416,
+          "correlation": null,
+          "prediction_sd": 0.0,
+          "target_sd": 12.225733622828663
+        }
+      },
+      "train_median": {
+        "SBP": {
+          "mae": 13.809878536224366,
+          "correlation": null,
+          "prediction_sd": 0.0,
+          "target_sd": 17.183559283243845
+        },
+        "DBP": {
+          "mae": 9.61416639098143,
+          "correlation": null,
+          "prediction_sd": 0.0,
+          "target_sd": 12.225733622828663
+        }
+      }
+    }
+  },
+  "uncertainty_note": "Seed sample SD is not a patient confidence interval. Partial seed sets are not averaged.",
+  "historical_cache_patient_identity_verified": false,
+  "deployment_ready": false
+}

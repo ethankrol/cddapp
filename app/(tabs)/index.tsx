@@ -1,7 +1,9 @@
+import BpCsvCard from '@/components/BpCsvCard';
+import BpSmokeTestLink from '@/components/BpSmokeTestLink';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import React, { useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Svg, { Line, Polyline, Text as SvgText } from 'react-native-svg';
 
 interface BloodPressureData {
@@ -129,8 +131,9 @@ function DefaultWeeklyChart() {
 }
 
 export default function HomePage() {
-  // Backend state variables with default 120/80 values (ready to be updated via useEffect/API)
-  const [bpData, setBpData] = useState<BloodPressureData>({
+  // Preserved dashboard preview. These fixed values are not CSV predictions.
+  // CSV results remain in BpCsvCard until a validated dashboard data flow is added.
+  const [bpData] = useState<BloodPressureData>({
     current: { systolic: 120, diastolic: 80 },
     daily: { systolic: 120, diastolic: 80 },
     weekly: { systolic: 120, diastolic: 80 },
@@ -141,51 +144,55 @@ export default function HomePage() {
     <View style={styles.container}>
       <Header />
 
-      <View style={styles.bodyWrapper}>
-        <Text style={styles.readingSubtitle}>Current Blood Pressure Reading (mmHg)</Text>
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        <BpCsvCard />
+        <BpSmokeTestLink />
+        <View style={styles.bodyWrapper}>
+          <Text style={styles.readingSubtitle}>Dashboard preview — sample values (mmHg)</Text>
 
-        <LinearGradient
-          colors={['#DDE8F6', '#EEF3F9', '#FFFFFF']}
-          locations={[0, 0.6, 1]}
-          style={styles.archBackdrop}
-        >
-          {/* Main Reading Dial */}
-          <View style={styles.dialBadge}>
-            <Text style={styles.dialValue}>{bpData.current.systolic}</Text>
-            <View style={styles.dialDivider} />
-            <Text style={styles.dialValue}>{bpData.current.diastolic}</Text>
+          <LinearGradient
+            colors={['#DDE8F6', '#EEF3F9', '#FFFFFF']}
+            locations={[0, 0.6, 1]}
+            style={styles.archBackdrop}
+          >
+            {/* Main Reading Dial */}
+            <View style={styles.dialBadge}>
+              <Text style={styles.dialValue}>{bpData.current.systolic}</Text>
+              <View style={styles.dialDivider} />
+              <Text style={styles.dialValue}>{bpData.current.diastolic}</Text>
+            </View>
+
+            {/* Daily, Weekly, Monthly Row */}
+            <View style={styles.metricsRow}>
+              <View style={styles.metricItem}>
+                <Text style={styles.metricValue}>{bpData.daily.systolic}</Text>
+                <View style={styles.metricDivider} />
+                <Text style={styles.metricValue}>{bpData.daily.diastolic}</Text>
+                <Text style={styles.metricLabel}>DAILY</Text>
+              </View>
+
+              <View style={styles.metricItem}>
+                <Text style={styles.metricValue}>{bpData.weekly.systolic}</Text>
+                <View style={styles.metricDivider} />
+                <Text style={styles.metricValue}>{bpData.weekly.diastolic}</Text>
+                <Text style={styles.metricLabel}>WEEKLY</Text>
+              </View>
+
+              <View style={styles.metricItem}>
+                <Text style={styles.metricValue}>{bpData.monthly.systolic}</Text>
+                <View style={styles.metricDivider} />
+                <Text style={styles.metricValue}>{bpData.monthly.diastolic}</Text>
+                <Text style={styles.metricLabel}>MONTHLY</Text>
+              </View>
+            </View>
+          </LinearGradient>
+
+          <View style={styles.chartCard}>
+            <Text style={styles.chartTitle}>Sample chart — not your measurement history</Text>
+            <DefaultWeeklyChart />
           </View>
-
-          {/* Daily, Weekly, Monthly Row */}
-          <View style={styles.metricsRow}>
-            <View style={styles.metricItem}>
-              <Text style={styles.metricValue}>{bpData.daily.systolic}</Text>
-              <View style={styles.metricDivider} />
-              <Text style={styles.metricValue}>{bpData.daily.diastolic}</Text>
-              <Text style={styles.metricLabel}>DAILY</Text>
-            </View>
-
-            <View style={styles.metricItem}>
-              <Text style={styles.metricValue}>{bpData.weekly.systolic}</Text>
-              <View style={styles.metricDivider} />
-              <Text style={styles.metricValue}>{bpData.weekly.diastolic}</Text>
-              <Text style={styles.metricLabel}>WEEKLY</Text>
-            </View>
-
-            <View style={styles.metricItem}>
-              <Text style={styles.metricValue}>{bpData.monthly.systolic}</Text>
-              <View style={styles.metricDivider} />
-              <Text style={styles.metricValue}>{bpData.monthly.diastolic}</Text>
-              <Text style={styles.metricLabel}>MONTHLY</Text>
-            </View>
-          </View>
-        </LinearGradient>
-
-        <View style={styles.chartCard}>
-          <Text style={styles.chartTitle}>Blood Pressure Tracking (Last 7 Days)</Text>
-          <DefaultWeeklyChart />
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -219,8 +226,10 @@ const styles = StyleSheet.create({
     width: 28,
     height: 28,
   },
+  scrollContent: {
+    paddingBottom: 28,
+  },
   bodyWrapper: {
-    flex: 1,
     paddingHorizontal: 20,
     paddingBottom: 95,
     justifyContent: 'flex-start',

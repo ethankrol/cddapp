@@ -1,0 +1,29 @@
+{
+  "scope": "Comparison of reported payload identifiers with previously prepared local source bytes; not verification of what binary ran on device.",
+  "files": {
+    "app/ml-ppg-expanded.tsx": {
+      "present": true,
+      "matches_reported_identifier": true
+    },
+    "components/BpExpandedLink.tsx": {
+      "present": true,
+      "matches_reported_identifier": true
+    },
+    "services/bpExpanded.native.ts": {
+      "present": true,
+      "matches_reported_identifier": true
+    },
+    "services/bpExpanded.ts": {
+      "present": true,
+      "matches_reported_identifier": true
+    },
+    "services/bpExpandedCore.d.ts": {
+      "present": true,
+      "matches_reported_identifier": true
+    },
+    "services/bpExpandedCore.js": {
+      "present": true,
+      "matches_reported_identifier": true
+    }
+  }
+}

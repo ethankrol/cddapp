@@ -1,0 +1,6 @@
+{
+  "name": "cdd-memory-probe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local synthetic-test process-memory sampler for the CDD iPhone app"
+}

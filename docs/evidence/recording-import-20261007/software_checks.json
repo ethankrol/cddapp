@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-07",
+  "node": "24.19.0",
+  "python": "3.12.14",
+  "nodeTests": {
+    "passed": 11,
+    "failed": 0
+  },
+  "pythonTests": {
+    "passed": 2,
+    "failed": 0
+  },
+  "typescript": "passed",
+  "changedCodeEslint": "passed",
+  "expoIosJavaScriptExport": "passed; 1896 modules; not a native Xcode build",
+  "actualCsv": {
+    "samples": 1322,
+    "elapsedSeconds": 48.723,
+    "result": "parsed; inference blocked; no cuff references"
+  },
+  "physicalIphoneNewScreensTested": false,
+  "firmwareCompiledForActualBoard": false,
+  "firmwareTestedOnHardware": false,
+  "githubWriteAttempt": "403 Resource not accessible by integration; no remote change",
+  "modelFilesChanged": false,
+  "rawRecordedWaveformsCommitted": false
+}

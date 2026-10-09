@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "conversion_parity_passed": true,
+  "created_utc": "2026-09-23T22:28:49.745535+00:00",
+  "tested_fixture_beats": 16,
+  "absolute_tolerance_mmhg": 0.01,
+  "max_abs_error_mmhg": {
+    "SBP": 5.340576171875e-05,
+    "DBP": 1.1444091796875e-05
+  },
+  "synthetic_max_abs_error_mmhg": {
+    "SBP": 3.0517578125e-05,
+    "DBP": 3.814697265625e-06
+  },
+  "checkpoint_sha256": "2cabfe0c64bf2463495d9581dea837638c41c149948abd9730b8b6be25fd0169",
+  "normalization_sha256": "bc8a28b7ca84faa00644fa7d13ae706705ecd47b9543296753273555be3aba41",
+  "fixture_sha256": "8b0cb0348ba1a9ad58a64bcefe64eee61f329a9d240b397a7ac38bb65e016e55",
+  "onnx_sha256": "a8e26e25b852344814e4a474e73e92b9f8d40845c20948fdcce828c9e4f12fce",
+  "onnx_opset": 17,
+  "input_stage": "normalized_model_inputs",
+  "normalization_in_graph": false,
+  "calibration_in_graph": false,
+  "raw_ppg_preprocessing_in_graph": false,
+  "cache_checkpoint_pairing_verified": false,
+  "iphone_runtime_tested": false,
+  "clinical_accuracy_evaluated": false,
+  "versions": {
+    "torch": "2.8.0+cpu",
+    "numpy": "1.26.4",
+    "onnx": "1.17.0",
+    "onnxruntime": "1.19.2"
+  }
+}

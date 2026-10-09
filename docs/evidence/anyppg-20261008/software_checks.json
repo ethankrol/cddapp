@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-08",
+  "checks": {
+    "synthetic_export_windows": 24,
+    "node_anyppg_tests_passed": 6,
+    "node_recording_tests_passed": 11,
+    "typescript": "passed",
+    "focused_eslint": "passed",
+    "ios_javascript_export": "passed",
+    "original_and_new_onnx_assets_in_export": "hashes verified"
+  },
+  "physicalIphoneRun": false,
+  "nativeXcodeBuildRun": false,
+  "bpAccuracyEvaluated": false,
+  "notes": [
+    "AnyPPG graph optimization must remain disabled.",
+    "No new npm dependencies.",
+    "GitHub branch creation rejected: 403 Resource not accessible by integration."
+  ]
+}

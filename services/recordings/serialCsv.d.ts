@@ -1,0 +1,13 @@
+import type {SensorRecording} from './recordingCore';
+export type SerialRecording={kind:'cdd_serial_csv_v1';format:'legacy_ac'|'raw_readout';rows:number[][]};
+export type SerialInspection={schemaVersion:1;format:string;source:string;sampleCount:number;elapsedSeconds:number;
+ observedLoggedPairsPerSecond:number|null;declaredSensorRateHz:null;timestampsDescribe:string;nonIncreasingTimestamps:number;
+ intervalMs:{min:number;median:number;p95:number;max:number};mostCommonIntervals:{ms:number;count:number}[];
+ hostSequenceMissing:number|null;hostSequenceNonIncreasing:number|null;sensorSamplesLost:null;fifoMaximum:number|null;
+ red:{min:number;max:number;mean:number;std:number;largestAdjacentChange:number};infrared:SerialInspection['red'];
+ previewAllowed:false;modelInferenceRun:false;qualityValidated:false;bpAccuracyEvaluated:false;blockers:string[];warnings:string[]};
+export const LEGACY_HEADER:string;
+export const RAW_HEADER:string;
+export function parseSerialCsv(text:string):SerialRecording;
+export function inspectSerialCsv(recording:SerialRecording):SerialInspection;
+export function parseRecordingFile(text:string):SensorRecording|SerialRecording;
