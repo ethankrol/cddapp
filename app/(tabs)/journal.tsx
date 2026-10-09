@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   KeyboardAvoidingView,
   Platform,
@@ -11,12 +11,10 @@ import {
   View
 } from 'react-native';
 import { Calendar } from 'react-native-calendars';
+import { getJournalEntries, initDatabase, saveJournalEntry } from '@/services/database';
 
 // --- TypeScript Definitions ---
-interface JournalEntry {
-  bp?: string;
-  notes?: string;
-}
+interface JournalEntry { bp: string; notes: string }
 
 const getBPStatus = (bpString?: string): 'high' | 'low' | 'normal' | 'none' => {
   if (!bpString || !bpString.includes('/')) return 'none';
@@ -42,13 +40,62 @@ function Header() {
 export default function JournalPage() {
   const [selected, setSelected] = useState<string>('');
   const [journalEntries, setJournalEntries] = useState<Record<string, JournalEntry>>({});
+  const [saveStatus, setSaveStatus] = useState<'loading' | 'saved' | 'saving' | 'error'>('loading');
+  const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pendingSave = useRef<{ date: string; entry: JournalEntry } | null>(null);
+  const writeQueue = useRef<Promise<void>>(Promise.resolve());
+
+  useEffect(() => {
+    let mounted = true;
+    void (async () => {
+      try {
+        await initDatabase();
+        const savedEntries = await getJournalEntries();
+        if (mounted) {
+          const loadedEntries = Object.fromEntries(savedEntries.map(({ date, bp, notes }) => [date, { bp, notes }])) as Record<string, JournalEntry>;
+          setJournalEntries((current) => ({ ...loadedEntries, ...current }));
+          setSaveStatus('saved');
+        }
+      } catch (error) {
+        console.error('Journal load error:', error);
+        if (mounted) setSaveStatus('error');
+      }
+    })();
+    return () => {
+      mounted = false;
+      if (saveTimer.current) clearTimeout(saveTimer.current);
+      // Preserve the last edit if the screen unmounts during the debounce window.
+      const pending = pendingSave.current;
+      if (pending) {
+        writeQueue.current = writeQueue.current.then(() => saveJournalEntry(pending.date, pending.entry.bp, pending.entry.notes));
+      }
+    };
+  }, []);
+
+  const flushPendingSave = () => {
+    if (saveTimer.current) clearTimeout(saveTimer.current);
+    saveTimer.current = null;
+    const pending = pendingSave.current;
+    if (!pending) return;
+    pendingSave.current = null;
+    setSaveStatus('saving');
+    writeQueue.current = writeQueue.current
+      .then(() => saveJournalEntry(pending.date, pending.entry.bp, pending.entry.notes))
+      .then(() => setSaveStatus('saved'))
+      .catch((error) => {
+        console.error('Journal save error:', error);
+        setSaveStatus('error');
+      });
+  };
 
   const updateEntry = (field: keyof JournalEntry, value: string) => {
     if (!selected) return;
-    setJournalEntries(prev => ({
-      ...prev,
-      [selected]: { ...prev[selected], [field]: value }
-    }));
+    const entry = { bp: '', notes: '', ...journalEntries[selected], [field]: value };
+    setJournalEntries(prev => ({ ...prev, [selected]: entry }));
+    pendingSave.current = { date: selected, entry };
+    setSaveStatus('saving');
+    if (saveTimer.current) clearTimeout(saveTimer.current);
+    saveTimer.current = setTimeout(flushPendingSave, 500);
   };
 
   return (
@@ -69,7 +116,7 @@ export default function JournalPage() {
         {/* Calendar is now inside the ScrollView so it moves up with the page */}
         <View style={styles.calendarWrapper}>
           <Calendar
-            onDayPress={(day) => setSelected(day.dateString)}
+            onDayPress={(day) => { flushPendingSave(); setSelected(day.dateString); }}
             dayComponent={({ date, state }: any) => {
               const dateString = date.dateString;
               const entry = journalEntries[dateString];
@@ -81,7 +128,7 @@ export default function JournalPage() {
 
               return (
                 <Pressable 
-                  onPress={() => setSelected(dateString)}
+                onPress={() => { flushPendingSave(); setSelected(dateString); }}
                   style={[styles.customDay, isSelected && styles.selectedDay]}
                 >
                   <Text style={[
@@ -117,6 +164,9 @@ export default function JournalPage() {
                 {getBPStatus(journalEntries[selected]?.bp) === 'high' && <Ionicons name="arrow-up" size={22} color="red" />}
                 {getBPStatus(journalEntries[selected]?.bp) === 'low' && <Ionicons name="arrow-down" size={22} color="red" />}
               </View>
+              <Text accessibilityLiveRegion="polite" style={styles.saveStatus}>
+                {saveStatus === 'loading' ? 'Loading entries…' : saveStatus === 'saving' ? 'Saving…' : saveStatus === 'error' ? 'Could not save. Your changes are still on screen.' : 'Saved on this device'}
+              </Text>
               
               <Text style={styles.inputLabel}>Average Blood Pressure (mmHg)</Text>
               <TextInput
@@ -128,6 +178,7 @@ export default function JournalPage() {
                 keyboardType="numbers-and-punctuation"
                 value={journalEntries[selected]?.bp || ''}
                 onChangeText={(val) => updateEntry('bp', val)}
+                onBlur={flushPendingSave}
               />
 
               <Text style={styles.inputLabel}>Daily Notes</Text>
@@ -138,6 +189,7 @@ export default function JournalPage() {
                 scrollEnabled={false} // Important: keeps the page scrolling, not the box
                 value={journalEntries[selected]?.notes || ''}
                 onChangeText={(val) => updateEntry('notes', val)}
+                onBlur={flushPendingSave}
               />
               
               {/* This extra space at the bottom allows the user to scroll 
@@ -232,6 +284,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     color: '#2A3451'
   },
+  saveStatus: { color: '#888', fontSize: 12, marginBottom: 14 },
   inputLabel: { 
     fontSize: 13, 
     fontWeight: '600', 
